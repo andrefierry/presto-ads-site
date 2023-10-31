@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PublicController::class, 'welcome'])->name('welcome');
+
+Route::get('/article/create', [PublicController::class, 'create'])->name('article.form-create');

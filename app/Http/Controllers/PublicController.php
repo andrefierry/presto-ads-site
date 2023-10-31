@@ -9,4 +9,8 @@ class PublicController extends Controller
     function welcome () {
         return view('welcome');
     }
+
+    function create (){
+        return view('article.form-create');
+    }
 }

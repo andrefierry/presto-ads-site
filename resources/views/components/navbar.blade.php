@@ -9,12 +9,26 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
+          @guest
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="{{route('register')}}">Registrati</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="{{route('login')}}">Login</a>
           </li>
+          @endguest
+          @auth
+          <li class="nav-item">
+            <a class="nav-link" href="">Benvenuto {{Auth::user()->name}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('article.form-create')}}">Aggiungi l'articolo</a>
+          </li>
+          <form method="POST" action="{{route('logout')}}">
+            @csrf
+            <button class="btn nav-link active" type="submit">Logout</button>
+          </form>
+          @endauth
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
