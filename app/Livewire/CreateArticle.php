@@ -4,17 +4,21 @@ namespace App\Livewire;
 
 use App\Models\Article;
 use Livewire\Component;
+use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 
 class CreateArticle extends Component
 {
     public $title;
     public $body;
     public $price;
+   
 
     protected $rules = [
         'title'=>'required|min:5',
         'body'=>'required',
         'price'=>'required',
+        
     ];
 
     protected $messagges = [
@@ -29,6 +33,7 @@ class CreateArticle extends Component
             'title'=>$this->title,
             'body'=>$this->body,
             'price'=>$this->price,
+            'user_id'=>Auth::user()->id, 
         ]);
 
         $this->title='';
@@ -44,6 +49,7 @@ class CreateArticle extends Component
 
     public function render()
     {
-        return view('livewire.create-article');
+        $categories = Category::all(); 
+        return view('livewire.create-article', compact('categories'));
     }
 }
