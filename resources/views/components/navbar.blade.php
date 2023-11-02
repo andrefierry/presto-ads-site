@@ -1,50 +1,44 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-lg">
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Categorie</a>
-          
-          <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-            @foreach ($categories as $category)
-              <li><a class="dropdown-item" href="#">{{($category->name)}}</a></li>
-              <li><hr class="dropdown-divider"></li>
-            @endforeach
-          </ul>
-        </li>
+      <div class="nav-item">
+        <a class="nav-link active ms-5 fs-2 fw-bold text" aria-current="page" href="{{route('welcome')}}">Presto.it</a>
+      </div>
+      <ul class="navbar-nav mx-auto align-items-center">
 
         @guest
         <li class="nav-item">
-          <a class="nav-link" href="{{route('register')}}">Registrati</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('login')}}">Login</a>
-        </li>
+          <a class="nav-link fw-bold text" href="{{route('login')}}">Login</a>
+        </li> 
+        </ul>
+        <div class="nav-item">
+          <a class="nav-link me-5 text-success d-flex align-items-center" href="{{route('register')}}">Registrati <i class="bi bi-r-circle fs-4 ms-2 text-success"></i></a>
+        </div>
         @endguest
         @auth
-        <li class="nav-item">
-          <a class="nav-link" href="">Benvenuto {{Auth::user()->name}}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('article.form-create')}}">Aggiungi l'articolo</a>
-        </li>
-        <form method="POST" action="{{route('logout')}}">
-          @csrf
-          <button class="btn nav-link active" type="submit">Logout</button>
-        </form>
+          <li class="nav-item mx-4">
+            <p class="nav-link active d-flex align-items-center my-0 text fw-bold" href="">Benvenuto {{Auth::user()->name}}<i class="bi bi-person-fill ms-2 fs-4"></i></p>
+          </li>
+          <li class="nav-item mx-4">
+            <a class="nav-link active d-flex align-items-center fw-bold text" href="{{route('article.form-create')}}">Aggiungi l'articolo <i class="bi bi-plus-circle-dotted ms-2 fs-4"></i></a>
+          </li>
+          <li class="nav-item dropdown mx-4 fw-bold text">
+            <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Categorie</a>
+            
+            <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+              @foreach ($categories as $category)
+                <li><a class="dropdown-item fw-bold text" href="{{route('categoryShow',compact('category'))}}">{{($category->name)}}</a></li>
+                <li><hr class="dropdown-divider"></li>
+              @endforeach
+            </ul>
+          </li>
+        </ul>
+          <div class="">
+            <form method="POST" action="{{route('logout')}}">
+              @csrf
+              <button class="btn nav-link active me-5 d-flex align-items-center text-danger" type="submit">Logout <i class="bi bi-box-arrow-left ms-2 fs-4 text-danger"></i></button>
+            </form>
+          </div>
         @endauth
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
     </div>
   </div>
 </nav>

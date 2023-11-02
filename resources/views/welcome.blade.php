@@ -1,6 +1,8 @@
 <x-layout>
-    <div class="container">
-        <h1 class="text-center my-5">Presto.it</h1>
+    <div class="container-fluid p-0">
+        <div class="py-3 my-5 bg-welcome">
+            <h1 class="text-center my-5 display-2 fw-bold text-white">Presto.it</h1>
+        </div>
         <div class="row justify-content-center">
                 @foreach ($articles as $key => $article )
                 <div class="col-12 col-md-4 d-flex justify-content-center my-4">

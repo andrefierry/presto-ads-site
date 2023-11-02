@@ -23,8 +23,9 @@ class CreateArticle extends Component
         
     ];
 
-    protected $messagges = [
+    protected $messages = [
         'title.required'=>'È necessario inserire il titolo',
+        'title.min'=>'È necessario inserire almeno 5 caratteri',
         'body.required'=> 'È necessario inserire il tuo commento',
         'price.required'=> 'È necessario inserire il prezzo',
         'category.required'=> 'È necessario selezionare una categoria',
@@ -32,6 +33,7 @@ class CreateArticle extends Component
 
     public function store()
     {
+        $this->validate();
         Article::create([
             'title'=>$this->title,
             'body'=>$this->body,

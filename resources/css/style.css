@@ -1,3 +1,39 @@
 body {
-    background-color: antiquewhite;
+    background-color: rgba(228, 225, 225, 0.365);
+}
+
+:root{
+    --primary-color: #290700;
+}
+
+.bg-welcome{
+    background-color: var(--primary-color);
+}
+
+.back-form{
+    background-color: white;
+}
+
+.bg-button{
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.text{
+    color: var(--primary-color)!important;
+}
+
+.form-layout{
+    border: 1px solid black;
+}
+
+.navbar{
+    background-color: white;
+}
+
+.bg-category{
+    background-color: #290700;
 }
