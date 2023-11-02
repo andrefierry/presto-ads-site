@@ -1,5 +1,7 @@
 body {
-    background-color: rgba(228, 225, 225, 0.365);
+    /* background-color: rgba(228, 225, 225, 0.365); */
+    background: url("/public/images/bg-body.jpg");
+    background-size: cover;
 }
 
 :root{
@@ -34,6 +36,20 @@ body {
     background-color: white;
 }
 
-.bg-category{
+/* .bg-category{
     background-color: #290700;
+} */
+
+.form{
+    background-color: rgba(255, 255, 255, 1);
+    /* position: absolute;  */
+    /* -webkit-backdrop-filter: blur(30px); */
+    /* backdrop-filter: blur(10px); */
+}
+
+.form-custom{
+    background: url("/public/images/bg-login.png");
+    background-size: cover;
+    /* filter: blur(2px);
+    position: absolute;  */
 }

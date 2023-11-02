@@ -35,7 +35,7 @@
           <div class="">
             <form method="POST" action="{{route('logout')}}">
               @csrf
-              <button class="btn nav-link active me-5 d-flex align-items-center text-danger" type="submit">Logout <i class="bi bi-box-arrow-left ms-2 fs-4 text-danger"></i></button>
+              <button class="btn nav-link active me-5 d-flex align-items-center text-danger fw-bold" type="submit">Logout <i class="bi bi-box-arrow-left ms-2 fs-4 text-danger"></i></button>
             </form>
           </div>
         @endauth

@@ -42,7 +42,7 @@
                         </select>
                       </div>
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-secondary shadow" role="button">Crea il tuo articolo</button>
+                        <button type="submit" class="bg-button shadow" role="button">Crea il tuo articolo</button>
                     </div>
                 </form>
             </div>
