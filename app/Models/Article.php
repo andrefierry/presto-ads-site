@@ -13,7 +13,7 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable=[
-        'title', 'body', 'price', 'user_id'
+        'title', 'body', 'price', 'user_id', 'category_id'
     ];
 
     public function user() : BelongsTo

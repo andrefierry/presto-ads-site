@@ -31,21 +31,19 @@
                         <label for="price" class="form-label text-primary fs-3">Prezzo:</label>
                         <input wire:model.live="price" type="text" class="form-control" id="price">
                     </div>
+                    <div class="mb-3">
+                        <label for="category">Scegli la Categoria:</label>
+                        <select wire:model.defer="category" id="category" class="form-control">
+                            {{-- <option value=""> Scegli la tua categoria</option> --}}
+                            @foreach ($categories as $category )
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+                        </select>
+                      </div>
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary px-5">Submit</button>
                     </div>
-                  </form>
-
-                  <div class="mb-3">
-                    <label for="category">Categoria</label>
-                    <select wire:model.defer="category" id="category" class="form-control">
-                        <option value=""> Scegli la tua categoria</option>
-                        @foreach ($categories as $category )
-                        <option value="{{$category->id}}">{{$category->name}}</option>
-                        @endforeach
-                    </select>
-                  </div>
-                  
+                </form>
             </div>
         </div>
     </div>

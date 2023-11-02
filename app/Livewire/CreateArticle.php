@@ -12,19 +12,22 @@ class CreateArticle extends Component
     public $title;
     public $body;
     public $price;
+    public $category;
    
 
     protected $rules = [
         'title'=>'required|min:5',
         'body'=>'required',
         'price'=>'required',
+        'category'=>'required',
         
     ];
 
     protected $messagges = [
-        'title.required'=>'è necessario inserire il titolo',
+        'title.required'=>'È necessario inserire il titolo',
         'body.required'=> 'È necessario inserire il tuo commento',
         'price.required'=> 'È necessario inserire il prezzo',
+        'category.required'=> 'È necessario selezionare una categoria',
     ];
 
     public function store()
@@ -34,6 +37,7 @@ class CreateArticle extends Component
             'body'=>$this->body,
             'price'=>$this->price,
             'user_id'=>Auth::user()->id, 
+            'category_id'=>$this->category,
         ]);
 
         $this->title='';
