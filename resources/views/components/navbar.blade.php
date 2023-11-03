@@ -22,7 +22,7 @@
             <a class="nav-link fs-5 active d-flex align-items-center fw-bold text" href="{{route('article.form-create')}}">Aggiungi l'articolo <i class="bi bi-plus-circle-dotted ms-2 fs-4"></i></a>
           </li>
           <li class="nav-item dropdown mx-4 fw-bold text">
-            <a class="nav-link fs-5 active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Categorie</a>
+            <a class="text-decoration-none text fs-5 active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Categorie</a>
             
             <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
               @foreach ($categories as $category)
