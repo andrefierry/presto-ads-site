@@ -1,8 +1,10 @@
 <div>
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
         <div class="row justify-content-center">
-            <h1 class="text-center fw-bold display-3 text mb-5">Crea il tuo articolo</h1>
-            <div class="col-12 col-md-8 rounded shadow p-5 back-form">
+            {{-- <div class=" mb-5 bg-welcome">
+                <h1 class="text-center my-5 display-2 fw-bold title py-4">Crea il tuo articolo</h1>
+            </div> --}}
+            <div class="col-12 col-md-6 rounded shadow p-0 back-form">
                 @if (session('message'))
                 <div class="alert alert-success">
                     {{session('message')}}
@@ -17,34 +19,44 @@
                     </ul>
                 </div>
                 @endif
-                <form wire:submit.prevent='store'>
-                    @csrf
-                    <div class="mb-4">
-                        <label for="title" class="form-label text fs-4">Inserire un titolo</label>
-                        <input wire:model.live="title" type="text" class="form-control form-layout w-50" id="title">
+                <div class="container-fluid shadow rounded">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 mt-5 p-4">
+                            <form wire:submit.prevent='store'>
+                                @csrf
+                                <h2 class="d-block d-lg-none mb-3 text fw-bold text-center">Crea il tuo articolo</h2>
+                                <div class="mb-4">
+                                    <label for="title" class="form-label text fs-4 fw-bold">Inserire un titolo</label>
+                                    <input wire:model.live="title" type="text" class="form-control w-100" id="title">
+                                </div>
+                                <label class="form-label text fs-5 fw-bold">Inserisci una descrizione</label>
+                                <div class="form-floating mb-4">
+                                    <textarea wire:model.live="body" class="form-control" placeholder="Leave a comment here" id="body" style="height: 100px"></textarea>
+                                    <label for="body">Inserisci il tuo commento:</label>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="price" class="form-label text fs-5 fw-bold">Prezzo</label>
+                                    <input wire:model.live="price" type="text" class="form-control w-25" id="price">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="category" class="form-label text fs-5 mb-3 fw-bold">Scegli la Categoria</label>
+                                    <select wire:model.defer="category" id="category" class="form-control w-50">
+                                        {{-- <option value=""> Scegli la tua categoria</option> --}}
+                                        @foreach ($categories as $category )
+                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                        @endforeach
+                                    </select>
+                                  </div>
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" class="bg-button shadow px-5 mt-3" role="button">Crea il tuo articolo</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="d-sm-none col-md-4 col-lg-6 d-lg-flex align-items-center justify-content-center border border-left-2 form-create">
+                            <h1 class="fw-bold mt-1 title text-center">Crea il tuo articolo</h1>
+                        </div>
                     </div>
-                    <label class="form-label text fs-4">Inserisci una descrizione</label>
-                    <div class="form-floating mb-4">
-                        <textarea wire:model.live="body" class="form-control form-layout" placeholder="Leave a comment here" id="body" style="height: 100px"></textarea>
-                        <label for="body">Inserisci il tuo commento:</label>
-                    </div>
-                    <div class="mb-4">
-                        <label for="price" class="form-label text fs-4">Prezzo</label>
-                        <input wire:model.live="price" type="text" class="form-control form-layout w-25" id="price">
-                    </div>
-                    <div class="mb-3">
-                        <label for="category" class="form-label text fs-4 mb-3">Scegli la Categoria</label>
-                        <select wire:model.defer="category" id="category" class="form-control form-layout w-25">
-                            {{-- <option value=""> Scegli la tua categoria</option> --}}
-                            @foreach ($categories as $category )
-                            <option value="{{$category->id}}">{{$category->name}}</option>
-                            @endforeach
-                        </select>
-                      </div>
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="bg-button shadow" role="button">Crea il tuo articolo</button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
