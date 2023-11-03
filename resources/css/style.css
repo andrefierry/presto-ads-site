@@ -60,6 +60,35 @@ body {
     height: 80px;
 }
 
+.nav-link{
+        color: #2F56B0;
+        position: relative;
+        text-decoration: none;
+        transition: color .4s ease-out;
+}
+
+.nav-link:hover {
+    color: #290700;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover::after {
+    border-color: #290700;
+    right: 0;
+  }
+
+  .nav-link::after {
+    border-radius: 1em;
+    border-top: .1em solid #290700;
+    content: "";
+    position: absolute;
+      right: 100%;
+      bottom: .14em;
+      left: 0;
+    transition: right .4s cubic-bezier(0,.5,0,1),
+                border-color .4s ease-out;
+  }
+
 /* .bg-category{
     background-color: #290700;
 } */
