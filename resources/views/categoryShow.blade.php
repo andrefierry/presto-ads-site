@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid bg-category p-5 my-5">
         <div class="row">
-            <div class="col-12 display-2 p-5 fw-bold text">Stai visualizzando la categoria {{$category->name}}</div>
+            <div class="col-12 display-2 p-4 fw-bold text">Stai visualizzando la categoria {{$category->name}}</div>
         </div>
     </div>
     <div class="container-fluid">
@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                     @empty
-                       <div class="col-12">
+                       <div class="col-12 ms-5">
                             <p class="h1 text display-5 fw-bold">Non è presente alcun articolo per questa categoria!</p>
                             <p class="mt-5 fs-2 text fw-bold">Pubblicane uno: <a href="{{route('article.form-create')}}" class=" fs-3 ms-4 bg-button px-5">Crea articolo</a></p>
                         </div> 

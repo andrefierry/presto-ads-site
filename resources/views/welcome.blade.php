@@ -30,17 +30,17 @@
                     <div class="wrapper">
                         <div class="product-img">
                         <img src="https://picsum.photos/20{{$key}}" height="420" width="327">
-                        </div>
-                        <div class="product-info">
-                        <div class="product-text">
-                            <h1 class="mb-3 text fw-bold text-card">{{$article->title}}</h1>
-                            <h2>Presto.it</h2>
-                            <p class="fs-5 text-card">{{substr($article->body,0,20)}}...</p>
-                        </div>
-                        <div class="product-price-btn d-flex align-items-center">
-                            <p><span class="fs-3 text-card">{{$article->price}}€</span></p>
-                            <button type="button" class="mt-3 text-card">dettaglio</button>
-                        </div>
+                        </div>    
+                        <div class="product-info">           
+                            <div class="product-text">
+                                <h1 class="mb-3 text fw-bold text-card">{{$article->title}}</h1>
+                                <h2>Presto.it</h2>
+                                <p class="fs-5 text-card">{{substr($article->body,0,20)}}...</p>
+                            </div>
+                            <div class="product-price-btn d-flex align-items-center">
+                                <p><span class="fs-3 text-card">{{$article->price}}€</span></p>
+                                <button type="button" class="mt-3 text-card">dettaglio</button>
+                            </div>
                         </div>
                     </div>
                 </div>
