@@ -4,6 +4,11 @@
             <h1 class="text-center mb-5 display-2 fw-bold title">Presto.it</h1>
         </div>
         <div class="row justify-content-center">
+            @if (session('message'))
+            <div class="alert alert-success">
+                {{session('message')}}
+            </div>
+            @endif
             <swiper-container class="mySwiper" space-between="30" slides-per-view="auto" pagination="true"
             pagination-clickable="true">
                 @foreach ($articles as $key => $article )

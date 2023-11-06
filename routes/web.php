@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +22,11 @@ Route::get('/article/create', [PublicController::class, 'create'])->name('articl
 Route::get('/category/show/{category}', [PublicController::class, 'categoryShow'])->name('categoryShow');
 
 Route::get('/article/detail/{article}', [PublicController::class, 'articleDetail'])->name('article.detail');
+
+Route::get('/revisor/home/', [RevisorController::class, 'index'])->name('revisor.index');
+
+Route::patch('/accetta/annuncio/{article}', [RevisorController::class, 'acceptArticle'])->name('revisor.accept_article');
+
+Route::patch('/rifiuta/annuncio/{article}', [RevisorController::class, 'rejectArticle'])->name('revisor.reject_article');
 
 

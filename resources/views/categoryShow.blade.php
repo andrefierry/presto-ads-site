@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="row">
-                    @forelse($category->articles as $key=>$article)
+                    @forelse($categories as $key=>$article)
                         {{-- <div class="col-12 col-md-4 d-flex justify-content-center my-4">
                             <div class="card shadow" style="width: 18rem;">
                                 <img src="https://picsum.photos/20{{$key}}" class="card-img-top" alt="...">

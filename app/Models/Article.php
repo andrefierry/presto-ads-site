@@ -23,6 +23,18 @@ class Article extends Model
 
     public function category() : BelongsTo 
     {
-        return $this->belongsTo(Category::class); 
+        $articles = $this::orderbyDesc('category_id')->get();
+
+        return $this->belongsTo(Category::class, 'category_id'); 
+    }
+
+    public function setAccepted($value){
+        $this->is_accepted = $value;
+        $this->save();
+        return true;
+    }
+
+    public static function toBeRevisionedCount(){
+        return Article::where('is_accepted', null)->count();
     }
 }
