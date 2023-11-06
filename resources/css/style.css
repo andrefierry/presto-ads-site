@@ -1,18 +1,14 @@
 body {
     /* background-color: rgba(228, 225, 225, 0.365); */
-    background: url("/public/images/bg-body.jpg");
+    /* background: url("/public/images/bg-body.jpg"); */
     background-size: cover;
     padding: 0px;
     margin: 0px;
     overflow-x: hidden;
-}
-
-.text-card{
-    font-family: 'Abril Fatface', serif !important;
+    height: 100vh;
 }
 
 .title{
-    font-family: 'Abril Fatface', serif;
     color: rgb(40, 38, 38);
     text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff,
                2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff;

@@ -33,13 +33,14 @@
                         </div>    
                         <div class="product-info">           
                             <div class="product-text">
-                                <h1 class="mb-3 text fw-bold text-card">{{$article->title}}</h1>
-                                <h2>Presto.it</h2>
+                                <h1 class="mb-2 text fw-bold text-card mt-2 pt-2">{{$article->title}}</h1>
+                                <h2 class="mb-1">Presto.it</h2>
+                                <p><span class="fs-6 text-card text-dark">pubblicato il: {{substr($article->created_at,0,11)}}</span></p>
                                 <p class="fs-5 text-card">{{substr($article->body,0,20)}}...</p>
                             </div>
                             <div class="product-price-btn d-flex align-items-center">
                                 <p><span class="fs-3 text-card">{{$article->price}}€</span></p>
-                                <button type="button" class="mt-3 text-card">dettaglio</button>
+                                <a href="{{route('article.detail',compact('article'))}}"><button type="button" class="mt-3 text-card">dettaglio</button></a>
                             </div>
                         </div>
                     </div>

@@ -4,6 +4,16 @@
         <a class="text-decoration-none active ms-5 fs-2 fw-bold text d-flex align-items-center" aria-current="page" href="{{route('welcome')}}"><img class="me-3" src="/images/logo.png" alt="" width="37px" height="37px">Presto.it</a>
       </div>
       <ul class="navbar-nav mx-auto align-items-center">
+        <li class="nav-item dropdown mx-4 fw-bold text">
+          <a class="text-decoration-none text fs-5 active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Categorie</a>
+          
+          <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+            @foreach ($categories as $category)
+              <li><a class="dropdown-item fw-bold text" href="{{route('categoryShow',compact('category'))}}">{{($category->name)}}</a></li>
+              <li><hr class="dropdown-divider"></li>
+            @endforeach
+          </ul>
+        </li>
 
         @guest
         <li class="nav-item">
@@ -20,16 +30,6 @@
           </li>
           <li class="nav-item mx-4">
             <a class="nav-link fs-5 active d-flex align-items-center fw-bold text" href="{{route('article.form-create')}}">Aggiungi l'articolo <i class="bi bi-plus-circle-dotted ms-2 fs-4"></i></a>
-          </li>
-          <li class="nav-item dropdown mx-4 fw-bold text">
-            <a class="text-decoration-none text fs-5 active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Categorie</a>
-            
-            <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-              @foreach ($categories as $category)
-                <li><a class="dropdown-item fw-bold text" href="{{route('categoryShow',compact('category'))}}">{{($category->name)}}</a></li>
-                <li><hr class="dropdown-divider"></li>
-              @endforeach
-            </ul>
           </li>
         </ul>
           <div class="">

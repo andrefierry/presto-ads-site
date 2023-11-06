@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
+    public function __construct(){
+        $this->middleware("auth")->except('categoryShow','welcome');
+    }
+
     function welcome () {
         $articles = Article::take(6)->get()->sortByDesc('created_at');
         return view('welcome', compact('articles'));
