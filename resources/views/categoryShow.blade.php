@@ -1,7 +1,7 @@
 <x-layout>
-    <div class="container-fluid bg-category p-5 my-5">
-        <div class="row">
-            <div class="col-12 display-2 p-4 fw-bold text">Stai visualizzando la categoria {{$category->name}}</div>
+    <div class="container-fluid bg-category mb-5">
+        <div class="row bg-revision">
+            <div class="col-12 display-2 p-4 fw-bold text text-center text-lg-start">Stai visualizzando la categoria {{$category->name}}</div>
         </div>
     </div>
     <div class="container-fluid">

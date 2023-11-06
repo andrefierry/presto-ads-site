@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid p-0 mt-0">
-        <div class=" mb-5 bg-welcome">
-            <h1 class="text-center mb-5 display-2 fw-bold title">Presto.it</h1>
+        <div class=" bg-welcome">
+            <h1 class="text-center display-2 fw-bold title">Presto.it</h1>
         </div>
         <div class="row justify-content-center">
             @if (session('message'))
@@ -9,10 +9,13 @@
                 {{session('message')}}
             </div>
             @endif
+            <div class="col-12 bg-revision mt-5 shadow">
+                <h2 class="display-3 ms-5 fw-bold p-3 my-4">I nostri ultimi articoli</h2>
+            </div>
             <swiper-container class="mySwiper" space-between="30" slides-per-view="auto" pagination="true"
             pagination-clickable="true">
                 @foreach ($articles as $key => $article )
-                {{-- <div class="col-12  col-lg-5 p-0">
+                {{-- <div class="col-12  col-lg-5 p-0 d-md-none">
                 <div class="wrapper">
                     <div class="product-img">
                       <img src="https://picsum.photos/20{{$key}}" height="420" width="327">

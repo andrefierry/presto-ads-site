@@ -1,8 +1,8 @@
 <x-layout>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
-                <h1 class="display-2">{{$article_to_check ? "Ecco l'articolo da revisionare" : 'Non ci sono articoli da revisionare'}}</h1>
+            <div class="col-12 p-3 bg-revision">
+                <h1 class="display-2 fw-bold text">{{$article_to_check ? "Ecco l'articolo da revisionare" : 'Non ci sono articoli da revisionare'}}</h1>
             </div>
             <div>
                 @if (session('message'))
@@ -11,9 +11,9 @@
             </div>
             @endif
                 @if ($article_to_check)
-                    <div class="container">
+                    <div class="container p-4 border border-1 mt-4 shadow rounded">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-12 d-flex flex-column align-items-center">
                                 <div id="showCarousel" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
@@ -36,23 +36,23 @@
                                     <span class="visually-hidden">next</span>
                                 </button>
                             </div>
-                            <h5 class="card-title">Titolo:{{$article_to_check->title}}</h5>
-                            <p class="card-text">Descrizione:{{$article_to_check->body}}</p>
-                            <p class="card-footer">Pubblicato il:{{$article_to_check->created_at->format('d/m/Y')}}</p>
+                            <h5 class="card-title fs-2 text fw-bold text-center">{{$article_to_check->title}}</h5>
+                            <p class="card-text ms-3 text pw-bold fs-4">Descrizione: {{$article_to_check->body}}</p>
+                            <p class="card-footer text-center">Pubblicato il: {{$article_to_check->created_at->format('d/m/Y')}}</p>
                         </div>
                         <div class="row">
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-md-6 d-flex justify-content-center">
                                 <form action="{{route('revisor.accept_article', ['article'=>$article_to_check])}}" method="POST">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-success shadow"> Accetta </button>
+                                    <button type="submit" class="btn btn-success shadow px-5"> Accetta </button>
                                 </form>
                             </div>
-                            <div class="col-12 col-md-6 text-end">
+                            <div class="col-12 col-md-6 d-flex justify-content-center">
                                 <form action="{{route('revisor.reject_article', ['article'=>$article_to_check])}}" method="POST">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-danger shadow"> Rifiuta </button>
+                                    <button type="submit" class="btn btn-danger shadow px-5"> Rifiuta </button>
                                 </form>
                             </div>
                         </div>
