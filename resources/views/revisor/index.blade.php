@@ -41,18 +41,25 @@
                             <p class="card-footer text-center">Pubblicato il: {{$article_to_check->created_at->format('d/m/Y')}}</p>
                         </div>
                         <div class="row">
-                            <div class="col-12 col-md-6 d-flex justify-content-center">
+                            <div class="col-12 col-md-4 d-flex justify-content-center">
                                 <form action="{{route('revisor.accept_article', ['article'=>$article_to_check])}}" method="POST">
                                     @csrf
                                     @method('PATCH')
                                     <button type="submit" class="btn btn-success shadow px-5"> Accetta </button>
                                 </form>
                             </div>
-                            <div class="col-12 col-md-6 d-flex justify-content-center">
+                            <div class="col-12 col-md-4 d-flex justify-content-center">
                                 <form action="{{route('revisor.reject_article', ['article'=>$article_to_check])}}" method="POST">
                                     @csrf
                                     @method('PATCH')
                                     <button type="submit" class="btn btn-danger shadow px-5"> Rifiuta </button>
+                                </form>
+                            </div>
+                            <div class="col-12 col-md-4 d-flex justify-content-center">
+                                <form action="{{route('revisor.null_article', ['article'=>$article_to_null])}}" method="POST">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit" class="btn btn-secondary shadow px-5"> Annulla </button>
                                 </form>
                             </div>
                         </div>

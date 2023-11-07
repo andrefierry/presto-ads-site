@@ -1,11 +1,11 @@
 body {
-    /* background-color: rgba(228, 225, 225, 0.365); */
+    background-color: rgba(246, 240, 240, 0.562);
     /* background: url("/public/images/bg-body.jpg"); */
     background-size: cover;
     padding: 0px;
     margin: 0px;
     overflow-x: hidden;
-    height: 100vh;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .title{
@@ -135,4 +135,30 @@ swiper-container {
 
 .bg-revision{
     background-color: rgb(237, 231, 231);
+}
+
+.miniature:hover{
+    transition: linear;
+    transition-duration: 0.2s;
+    transform: scale(1.1);
+}
+
+.separate-footer{
+    min-height: 100vh;
+}
+
+.bg-banner{
+    background-color: rgb(241, 228, 201);
+}
+
+@media screen and (max-width:530px){
+    .grandezza-img{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .grandezza-img{
+        width: 350px;
+    }
 }

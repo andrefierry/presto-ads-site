@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Artisan;
 class RevisorController extends Controller
 {
     public function index (){
-        $article_to_check=Article::where('is_accepted', null)->first();
-        
-        return view('revisor.index', compact('article_to_check'));
+        $article_to_check = Article::where('is_accepted', null)->first();
+        $article_to_null = Article::whereNotNull('is_accepted')->orderBy('created_at','DESC')->first();
+        return view('revisor.index', compact('article_to_check','article_to_null'));
     }
     
     public function acceptArticle(Article $article){
@@ -26,6 +26,11 @@ class RevisorController extends Controller
     public function rejectArticle(Article $article){
         $article->setAccepted(false);
         return redirect()->back()->with('message', "Complimenti hai rifiutato l'annuncio"); 
+    }
+
+    public function nullArticle(Article $article){
+        $article->setAccepted(null);
+        return redirect()->back()->with('message', "Hai annullato la tua ultima operazione"); 
     }
 
     public function becomeRevisor()

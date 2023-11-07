@@ -9,7 +9,10 @@
 </head>
 <body>
     <x-navbar></x-navbar>
-    {{$slot}}
+    
+    <div class="separate-footer">
+        {{$slot}}
+    </div>
     <x-footer></x-footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
