@@ -10,10 +10,19 @@
                     {{session('message')}}
                 </div>
                 @endif
+                
+        </div>
+        <div class="my-4 ms-4">
+            <form class="d-flex w-25" role="search">
+                <input class="form-control me-2" type="search" placeholder="Ricerca i tuoi articoli" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
         </div>
             <div class="col-12 bg-revision mt-5 shadow">
                 <h2 class="display-3 ms-5 fw-bold p-3 my-4">I nostri ultimi articoli</h2>
             </div>
+
+           
             <swiper-container class="mySwiper" space-between="30" slides-per-view="auto" pagination="true"
             pagination-clickable="true">
                 @foreach ($articles as $key => $article )
