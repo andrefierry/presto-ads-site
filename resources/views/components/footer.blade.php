@@ -11,17 +11,16 @@
           </ul>
         </div>
   
-        {{-- <div class="col-6 col-md-4 mb-3">
-          <h5 class="text-center">Contatti</h5>
+        <div class="col-6 col-md-4 mb-3">
+          <h5 class="text-center">Presto.it</h5>
           <ul class="nav justify-content-center align-items-center mt-4">
-            <li class="nav-item mb-2 fs-1 mx-3"><a href="#" class="nav-link p-0 text-muted"><i class="bi bi-instagram"></i></a></li>
-            <li class="nav-item mb-2 fs-1 mx-3"><a href="#" class="nav-link p-0 text-muted"><i class="bi bi-facebook"></i></a></li>
-            <li class="nav-item mb-2 fs-1 mx-3"><a href="#" class="nav-link p-0 text-muted"><i class="bi bi-twitter-x"></i></a></li>
-            <li class="nav-item mb-2 fs-1 mx-3"><a href="" class="nav-link p-0 text-muted"><i class="bi bi-whatsapp"></i></a></li>
+            <li class="nav-item mb-2 fs-1 mx-3"><a href="#" class="nav-link p-0 text-muted">Registrati cliccando qui</a></li>
+            <li class="nav-item mb-2 fs-1 mx-3"><a href="#" class="nav-link p-0 text-muted">Vuoi lavorare con noi?</a></li>
+            <li class="nav-item mb-2 fs-1 mx-3"><a href="{{route('become.revisor')}}" class="btn btn-warning text-light shadow my-3"> Diventa revisore </a></li>
           </ul>
         </div>
   
-        <div class="col-6 col-md-4 mb-3">
+        {{-- <div class="col-6 col-md-4 mb-3">
           <h5 class="text-center">Metodi di pagamento</h5>
           <ul class="nav justify-content-center align-items-center mt-4">
             <li class="nav-item mb-2 fs-1 mx-3"><a href="#" class="nav-link p-0 text-muted"><i class="bi bi-paypal"></i></a></li>

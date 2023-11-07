@@ -4,11 +4,13 @@
             <h1 class="text-center display-2 fw-bold title">Presto.it</h1>
         </div>
         <div class="row justify-content-center">
-            @if (session('message'))
-            <div class="alert alert-success">
-                {{session('message')}}
-            </div>
-            @endif
+            <div class="w-50 mt-4">
+                @if (session('message'))
+                <div class="alert alert-danger">
+                    {{session('message')}}
+                </div>
+                @endif
+        </div>
             <div class="col-12 bg-revision mt-5 shadow">
                 <h2 class="display-3 ms-5 fw-bold p-3 my-4">I nostri ultimi articoli</h2>
             </div>

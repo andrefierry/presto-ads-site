@@ -14,19 +14,6 @@
             @endforeach
           </ul>
         </li>
-        @if(Auth::user()->is_revisor)
-            <li class="nav-item">
-            <a class="nav-link position-relative text fw-bold fs-5"
-            aria-current="page" href="{{route('revisor.index')}}">
-            Zona Revisore
-            <span class="position-absolute top-25 h-50 start-100 translate-middle
-            badge rounded-pill bg-danger">
-            {{App\Models\Article::toBeRevisionedCount()}}
-            <span class="visually-hidden"> unread messages </span>
-            </span>
-            </a>
-            </li>
-         @endif
         @guest
         <li class="nav-item">
           <a class="nav-link fs-5 fw-bold text d-flex align-items-center" href="{{route('login')}}">Accedi <i class="bi bi-person-circle fs-4 ms-1"></i></a>
@@ -37,6 +24,19 @@
         </div>
         @endguest
         @auth
+          @if(Auth::user()->is_revisor)
+              <li class="nav-item">
+                <a class="nav-link position-relative text fw-bold fs-5"
+                aria-current="page" href="{{route('revisor.index')}}">
+                Zona Revisore
+                  <span class="position-absolute top-25 h-50 start-100 translate-middle
+                  badge rounded-pill bg-danger">
+                  {{App\Models\Article::toBeRevisionedCount()}}
+                  <span class="visually-hidden"> unread messages </span>
+                  </span>
+                </a>
+              </li>
+          @endif
           <li class="nav-item mx-4">
             <p class="nav-link fs-5 active d-flex align-items-center my-0 text fw-bold" href="">Benvenuto {{Auth::user()->name}}<i class="bi bi-person-fill ms-2 fs-4"></i></p>
           </li>
