@@ -63,16 +63,23 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll ms-auto" style="--bs-scroll-height: 100px;">
-        <li>
-          <x-_locale lang='it' nation='it'/>
-        </li>
-        <li>
-          <x-_locale lang='en' nation='gb'/>
-        </li>
-        <li>
-          <x-_locale lang='es' nation='es'/>
-        </li>
+      <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll ms-auto d-flex align-items-center" style="--bs-scroll-height: 100px;">
+        <div class="dropdown mx-5">
+          <button class="btn border-0 text fs-4 fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Lang
+          </button>
+          <ul class="dropdown-menu rounded">
+            <li class="d-flex align-items-center">
+              <x-_locale lang='it' nation='it'/><h3>ITA</h3>
+            </li>
+            <li class="d-flex align-items-center">
+              <x-_locale lang='en' nation='gb'/><h3>EN</h3>
+            </li>
+            <li class="d-flex align-items-center">
+              <x-_locale lang='es' nation='es'/><h3>ES</h3>
+            </li>
+          </ul>
+        </div>
         <li class="nav-item dropdown mx-5 fw-bold text d-flex flex-column justify-content-center ">
           <a class="text-decoration-none text fs-4 active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">{{__('ui.categorie')}}</a>
           

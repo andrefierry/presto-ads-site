@@ -4,7 +4,7 @@
             {{-- <div class=" mb-5 bg-welcome">
                 <h1 class="text-center my-5 display-2 fw-bold title py-4">Crea il tuo articolo</h1>
             </div> --}}
-            <div class="col-12 col-md-6 rounded shadow p-0 back-form">
+            <div class="col-12 col-md-6 p-0">
                 @if (session('message'))
                 <div class="alert alert-success">
                     {{session('message')}}
@@ -19,7 +19,7 @@
                     </ul>
                 </div>
                 @endif
-                <div class="container-fluid rounded border border-4 border-danger">
+                <div class="container-fluid rounded border border-4 border-danger mt-5 shadow">
                     <div class="row">
                         <div class="col-12 col-lg-6 mt-5 p-4">
                             <form method='POST' action="{{route('become.revisor')}}">
