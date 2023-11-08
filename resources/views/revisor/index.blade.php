@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 p-3 bg-revision">
-                <h1 class="display-2 fw-bold text">{{$article_to_check ? "Ecco l'articolo da revisionare" : 'Non ci sono articoli da revisionare'}}</h1>
+                <h1 class="display-2 fw-bold text">{{$article_to_check ? __('ui.articoloDaRevisionare') : __('ui.noRevisione') }}</h1>
             </div>
             <div>
                 @if (session('message'))
@@ -14,7 +14,7 @@
                 <form action="{{route('revisor.null_article', ['article'=>$article_to_null])}}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <button type="submit" class="btn btn-secondary shadow px-5"> Annulla </button>
+                    <button type="submit" class="btn btn-secondary shadow px-5">{{__('ui.annulla')}}</button>
                 </form>
             </div>
                 @if ($article_to_check)
@@ -44,22 +44,22 @@
                                 </button>
                             </div>
                             <h5 class="card-title fs-2 text fw-bold text-center">{{$article_to_check->title}}</h5>
-                            <p class="card-text ms-3 text pw-bold fs-4">Descrizione: {{$article_to_check->body}}</p>
-                            <p class="card-footer text-center">Pubblicato il: {{$article_to_check->created_at->format('d/m/Y')}}</p>
+                            <p class="card-text ms-3 text pw-bold fs-4">{{__('ui.descrizione')}}: {{$article_to_check->body}}</p>
+                            <p class="card-footer text-center">{{__('ui.pubblicazione')}}: {{$article_to_check->created_at->format('d/m/Y')}}</p>
                         </div>
                         <div class="row">
                             <div class="col-12 col-md-4 d-flex justify-content-center">
                                 <form action="{{route('revisor.accept_article', ['article'=>$article_to_check])}}" method="POST">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-success shadow px-5"> Accetta </button>
+                                    <button type="submit" class="btn btn-success shadow px-5">{{__('ui.accetta')}}</button>
                                 </form>
                             </div>
                             <div class="col-12 col-md-4 d-flex justify-content-center">
                                 <form action="{{route('revisor.reject_article', ['article'=>$article_to_check])}}" method="POST">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-danger shadow px-5"> Rifiuta </button>
+                                    <button type="submit" class="btn btn-danger shadow px-5">{{__('ui.rifiuta')}}</button>
                                 </form>
                             </div>
                         </div>

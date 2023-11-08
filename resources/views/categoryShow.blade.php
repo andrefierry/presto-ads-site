@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid bg-category mb-5">
         <div class="row bg-revision">
-            <div class="col-12 display-2 p-4 fw-bold text text-center text-lg-start">Stai visualizzando la categoria {{$category->name}}</div>
+            <div class="col-12 display-2 p-4 fw-bold text text-center text-lg-start">{{__('ui.visualizzaCategoria')}} {{$category->name}}</div>
         </div>
     </div>
     <div class="container-fluid">
@@ -35,7 +35,7 @@
                                     <div class="product-price-btn d-flex align-items-center">
                                         <p><span class="fs-3 text-card">{{$article->price}}€</span></p>
                                         
-                                        <a  href="{{route('article.detail',compact('article'))}}"><button class="bg-button mt-3">dettaglio</button></a>
+                                        <a  href="{{route('article.detail',compact('article'))}}"><button class="bg-button mt-3">{{__('ui.dettaglio')}}</button></a>
                                     </div>
                                     </div>
                                 </div>

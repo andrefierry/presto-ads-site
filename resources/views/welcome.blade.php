@@ -16,11 +16,11 @@
             {{-- <h1 class="text-center display-2 fw-bold title ms-5 d-flex align-items-center"><img class="me-3" src="/images/logo.png" alt="" width="80px" height="80px">Presto.it</h1> --}}
             <div class="row align-items-center w-100">
                 <div class="col-6 d-flex align-items-center justify-content-evenly">
-                    <h2 class="display-4 ms-0 p-3 my-4 fw-bold">I nostri ultimi articoli</h2>
+                    <h2 class="display-4 ms-0 p-3 my-4 fw-bold">{{__('ui.allArticles')}}</h2>
                 </div>
                 <div class="col-6 d-flex align-items-center justify-content-center">
                     <form action="{{route('articles.search')}}" method="GET" class="d-flex ms-auto me-5 w-50" role="search">
-                        <input name="searched" class="form-control me-2 fs-5" type="search" placeholder="Ricerca i tuoi articoli" aria-label="Search">
+                        <input name="searched" class="form-control me-2 fs-5" type="search" placeholder="{{__('ui.ricerca')}}" aria-label="Search">
                         <button class="btn btn-outline-success fs-5" type="submit">Search</button>
                       </form>
                 </div>
@@ -44,7 +44,7 @@
                         </div>
                         <p><span class="fs-3">{{$article->price}}€</span></p>
                         <div class="product-price-btn d-flex align-items-center">
-                            <button type="button" class="">dettaglio</button>
+                            <button type="button" class="">{{__('ui.dettaglio')}}</button>
                         </div>
                     </div>
                 </div>
@@ -64,12 +64,12 @@
                                 <div class="product-text">
                                     <h1 class="mb-2 text fw-bold text-card mt-2 pt-2">{{$article->title}}</h1>
                                     <h2 class="mb-1">Presto.it</h2>
-                                    <p><span class="fs-6 text-card text-dark">pubblicato il: {{substr($article->created_at,0,11)}}</span></p>
+                                    <p><span class="fs-6 text-card text-dark">{{__('ui.pubblicazione')}}: {{substr($article->created_at,0,11)}}</span></p>
                                     <p class="fs-5 text-card">{{substr($article->body,0,20)}}...</p>
                                 </div>
                                 <div class="product-price-btn d-flex align-items-center">
                                     <p><span class="fs-3 text-card">{{$article->price}}€</span></p>
-                                    <a href="{{route('article.detail',compact('article'))}}"><button type="button" class="mt-3 text-card">dettaglio</button></a>
+                                    <a href="{{route('article.detail',compact('article'))}}"><button type="button" class="mt-3 text-card">{{__('ui.dettaglio')}}</button></a>
                                 </div>
                             </div>
                         </div>

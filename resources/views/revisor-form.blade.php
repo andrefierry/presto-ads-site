@@ -22,7 +22,7 @@
                 <div class="container-fluid rounded border border-4 border-danger">
                     <div class="row">
                         <div class="col-12 col-lg-6 mt-5 p-4">
-                            <form method='GET' action="{{route('become.revisor')}}">
+                            <form method='POST' action="{{route('become.revisor')}}">
                                 @csrf
                                 <h2 class="d-block d-lg-none mb-3 text-dark fw-bold text-center">Diventa Revisore</h2>
                                 <div class="mb-4">
