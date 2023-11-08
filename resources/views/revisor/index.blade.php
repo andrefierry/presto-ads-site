@@ -10,6 +10,13 @@
                 {{session('message')}}
             </div>
             @endif
+            <div class="col-12 col-md-4 d-flex justify-content-center mt-5">
+                <form action="{{route('revisor.null_article', ['article'=>$article_to_null])}}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button type="submit" class="btn btn-secondary shadow px-5"> Annulla </button>
+                </form>
+            </div>
                 @if ($article_to_check)
                     <div class="container p-4 border border-1 mt-4 shadow rounded">
                         <div class="row">
@@ -53,13 +60,6 @@
                                     @csrf
                                     @method('PATCH')
                                     <button type="submit" class="btn btn-danger shadow px-5"> Rifiuta </button>
-                                </form>
-                            </div>
-                            <div class="col-12 col-md-4 d-flex justify-content-center">
-                                <form action="{{route('revisor.null_article', ['article'=>$article_to_null])}}" method="POST">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button type="submit" class="btn btn-secondary shadow px-5"> Annulla </button>
                                 </form>
                             </div>
                         </div>

@@ -16,7 +16,7 @@
           <ul class="nav justify-content-center align-items-center mt-4 flex-column">
             <li class="nav-item mb-2 mx-3"><a href="#" class="nav-link p-0 text-muted">Registrati cliccando qui</a></li>
             <li class="nav-item mb-2 mx-3"><a href="#" class="nav-link p-0 text-muted">Vuoi lavorare con noi?</a></li>
-            <li class="nav-item mb-2 mx-3"><a href="{{route('become.revisor')}}" class="btn btn-outline-success  shadow my-3"> Diventa revisore </a></li>
+            <li class="nav-item mb-2 mx-3"><a href="{{route('revisor-form')}}" class="btn btn-outline-success  shadow my-3"> Diventa revisore </a></li>
           </ul>
         </div>
   

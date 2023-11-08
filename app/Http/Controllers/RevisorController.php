@@ -44,4 +44,8 @@ class RevisorController extends Controller
         return redirect ('/')->with("message", "Complimenti, l'utente è diventato il nuovo revisore");
     }
 
+    public function formRevisor (){
+        return view('revisor-form');
+    }
+
 }

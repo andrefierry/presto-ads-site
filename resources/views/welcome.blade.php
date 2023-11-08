@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="w-50 mt-4">
                 @if (session('message'))
-                <div class="alert alert-danger">
+                <div class="alert alert-secondary">
                     {{session('message')}}
                 </div>
                 @endif

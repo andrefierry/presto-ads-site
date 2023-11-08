@@ -36,3 +36,5 @@ Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])-
 Route::get('/ricerca/annuncio', [PublicController::class, 'searchArticles'])->name('articles.search');
 
 Route::patch('/annulla/scelta/{article}', [RevisorController::class, 'nullArticle'])->middleware('isRevisor')->name('revisor.null_article');
+
+Route::get('/richiesta/revisore', [RevisorController::class, 'formRevisor'])->name('revisor-form');
