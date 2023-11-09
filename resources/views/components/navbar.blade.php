@@ -54,7 +54,7 @@
     </div>
   </div>
 </nav> --}}
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
   <div class="container-fluid">
     <div class="nav-item">
       <a class="text-decoration-none active ms-5 fs-1 fw-bold text d-flex align-items-center" aria-current="page" href="{{route('welcome')}}"><img class="me-3" src="/images/logo.png" alt="" width="50px" height="50px">Presto.it</a>
@@ -83,9 +83,9 @@
         <li class="nav-item dropdown mx-5 fw-bold text d-flex flex-column justify-content-center ">
           <a class="text-decoration-none text fs-4 active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">{{__('ui.categorie')}}</a>
           
-          <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+          <ul class="dropdown-menu shadow" aria-labelledby="categoriesDropdown">
             @foreach ($categories as $category)
-              <li><a class="dropdown-item fw-bold text" href="{{route('categoryShow',compact('category'))}}">{{($category->name)}}</a></li>
+              <li><a class="dropdown-item fw-bold text fs-5" href="{{route('categoryShow',compact('category'))}}">{{($category->name)}}</a></li>
               <li><hr class="dropdown-divider"></li>
             @endforeach
           </ul>
