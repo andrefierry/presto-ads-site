@@ -40,21 +40,22 @@
                                     <input wire:model.live="price" type="text" class="form-control w-25" id="price">
                                 </div>
                                 @if ($photo)
-                                Photo Preview:
-
-                                <img class="mx-auto shadow rounded" width="100px" height="100px" src="{{ $photo->temporaryUrl() }}">
+                                <div class="col-12 d-flex flex-column">
+                                    Photo Preview:
+                                    <img class="my-3 shadow rounded" width="100px" height="100px" src="{{ $photo->temporaryUrl() }}">    
+                                </div>
                                 @endif
-                                <input type="file" wire:model="photo">
+                                <input type="file" wire:model="photo" class="my-4">
                                 {{-- <div class="mb-3">
                                     <input wire:model="temporary_images" type="file" name="images" multiple class="form-control @error('temporary_images.*') is-invalid @enderror" placeholder='Img'>
                                     @error('temporary_images.*')
                                     <p class="text-danger mt-2">{{$message}}</p>
                                     @enderror
                                 </div> --}}
-                                @if (!empty($images))
+                                {{-- @if (!empty($images))
 
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12 d-flex flex-column">
                                         <p>Photo Preview:</p> 
                                         <div class="row border border-4 border-info rounded shadow py-4">
                                             @foreach ($images as $key=>$image)
@@ -66,7 +67,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endif
+                                @endif --}}
                                 <div class="mb-3">
                                     <label for="category" class="form-label text fs-5 mb-3 fw-bold">{{__('ui.scegliCategoria')}}</label>
                                     <select wire:model.defer="category" id="category" class="form-control w-50">
