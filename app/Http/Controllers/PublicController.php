@@ -24,11 +24,7 @@ class PublicController extends Controller
     }
 
     public function categoryShow(Category $category){
-
-        $categories = Article::orderBy('created_at', 'DESC')->get();
-
-
-
+        $categories = Article::where('is_accepted', true)->orderBy('created_at', 'DESC')->get();
         return view('categoryShow', compact('category', 'categories'));
     }
 
