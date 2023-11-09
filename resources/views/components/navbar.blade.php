@@ -92,11 +92,11 @@
         </li>
         @guest
         <li class="nav-item">
-          <a class="nav-link fs-4 fw-bold text d-flex align-items-center" href="{{route('login')}}">{{__('ui.accedi')}} <i class="bi bi-person-circle fs-4 ms-1"></i></a>
+          <a class="nav-link fs-4 fw-bold text d-flex align-items-center mx-5" href="{{route('login')}}">{{__('ui.accedi')}} <i class="bi bi-person-circle fs-4 ms-1"></i></a>
         </li> 
         </ul>
         <div class="nav-item">
-          <a class="text-decoration-none fs-4 me-5 text-success d-flex align-items-center" href="{{route('register')}}">{{__('ui.registrati')}} <i class="bi bi-r-circle fs-4 ms-2 text-success"></i></a>
+          <a class="text-decoration-none fs-4 mx-5 text-success d-flex align-items-center fw-bold" href="{{route('register')}}">{{__('ui.registrati')}} <i class="bi bi-r-circle fs-4 ms-2 text-success"></i></a>
         </div>
         @endguest
         @auth
