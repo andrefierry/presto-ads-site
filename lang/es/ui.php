@@ -32,4 +32,15 @@ return [
     'annulla'=>'Undo',
     'zonaRevisore'=>'Àrea revisor',
     'descrizione'=>'Descripcion',
+
+    'Viaggi'=>'Viaje',
+    'Sport' => 'Deportes' ,
+    'Lavoro' => 'Trabajo',
+    'Collezionismo' => 'Recoger',
+    'Abbigliamento' => 'Ropa',
+    'Immobili' => 'Bienes inmuebles',
+    'Finanza' => 'Finanzas',
+    'Elettronica' => 'Electrónica',
+    'Motori' => 'Motores',
+    'Usato'=>'Usado'
 ];

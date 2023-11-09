@@ -1,5 +1,7 @@
 <?php
 
+
+
 return [
     'allArticles'=>'Ecco i nostri annunci',
     'annulla'=>'Annulla',
@@ -32,4 +34,15 @@ return [
     'NoRevisioni'=>'Non ci sono articoli da revisionare',
     'descrizione'=>'Descrizione',
     'commento'=>'Inserisci il tuo commento',
+
+    'Viaggi'=>'Viaggi',
+    'Sport' => 'Sport' ,
+    'Lavoro' => 'Lavoro',
+    'Collezionismo' => 'Collezionismo',
+    'Abbigliamento' => 'Abbigliamento',
+    'Immobili' => 'Immobili',
+    'Finanza' => 'Finanza',
+    'Elettronica' => 'Elettronica',
+    'Motori' => 'Motori',
+    'Usato' => 'Usato',
 ];

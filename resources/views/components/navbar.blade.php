@@ -85,7 +85,7 @@
           
           <ul class="dropdown-menu shadow" aria-labelledby="categoriesDropdown">
             @foreach ($categories as $category)
-              <li><a class="dropdown-item fw-bold text fs-5" href="{{route('categoryShow',compact('category'))}}">{{($category->name)}}</a></li>
+              <li><a class="dropdown-item fw-bold text fs-5" href="{{route('categoryShow',compact('category'))}}">{{__( 'ui.'. $category->name )}}</a></li>
               <li><hr class="dropdown-divider"></li>
             @endforeach
           </ul>

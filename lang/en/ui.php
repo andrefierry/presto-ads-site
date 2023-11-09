@@ -29,7 +29,17 @@ return [
     'scegliCategoria'=>'Choose the category',
     'zonaRevisore'=>'Revisor zone',
     'NoRevisioni'=>'There are not articles to review',
-    'annulla'=>'Cancel',
     'descrizione'=>'Description',
+
+    'Viaggi'=>'Travel',
+    'Sport' => 'Sport' ,
+    'Lavoro' => 'Work',
+    'Collezionismo' => 'Collection',
+    'Abbigliamento' => 'Clothing',
+    'Immobili' => 'Properties',
+    'Finanza' => 'Finance',
+    'Elettronica' => 'Electronics',
+    'Motori' => 'Motors',
+    'Usato' => 'Used'
 
 ];
