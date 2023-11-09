@@ -1,10 +1,10 @@
 <div>
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-5 vh-100">
         <div class="row justify-content-center">
             {{-- <div class=" mb-5 bg-welcome">
                 <h1 class="text-center my-5 display-2 fw-bold title py-4">Crea il tuo articolo</h1>
             </div> --}}
-            <div class="col-12 col-md-6 p-0">
+            <div class="col-12 col-md-7 p-0">
                 @if (session('message'))
                 <div class="alert alert-success">
                     {{session('message')}}

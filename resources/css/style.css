@@ -173,3 +173,11 @@ swiper-container {
         width: 350px;
     }
 }
+
+.div-vuoto{
+    height: 23vh;
+}
+
+.bg-carousel{
+    background-color: #1f06011b;
+}
