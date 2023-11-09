@@ -25,7 +25,7 @@
                                     @if ($article_to_check->images)
                                         <div class="carousel-inner">
                                             @foreach ($article_to_check->images as $image)
-                                          <div class="carousel-item @if($loop->first)active @endif">
+                                          <div class="carousel-item">
                                             <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" width="300px" height="300px" alt="">
                                             </div>
                                             @endforeach

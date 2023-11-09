@@ -63,35 +63,44 @@ class CreateArticle extends Component
             
         // ]);
 
-        $this->article = Category::find($this->category)->articles()->create([
-            'title'=>$this->title,
-            'body'=>$this->body,
-            'price'=>$this->price,
-            'user_id'=>Auth::user()->id, 
-            'category_id'=>$this->category,
-        ]);
+        // $this->article = Category::find($this->category)->articles()->create([
+        //     'title'=>$this->title,
+        //     'body'=>$this->body,
+        //     'price'=>$this->price,
+        //     'user_id'=>Auth::user()->id, 
+        //     'category_id'=>$this->category,
+        // ]);
 
+        $this->article = Category::find($this->category)->articles()->create([
+                'title'=>$this->title,
+                'body'=>$this->body,
+                'price'=>$this->price,
+                'user_id'=>Auth::user()->id, 
+                'category_id'=>$this->category,
+        ]);
         if(count($this->images))
         {
             foreach($this->images as $image) {
                 $this->article->images()->create(['path' => $image->store('images', 'public')]);
             }
         }
-       
+
+        $this->article->save();
+
+        // if(count($this->images))
+        // {
+        //     foreach($this->images as $image) {
+        //         $this->article->images()->create(['path' => $image->store('images', 'public')]);
+        //     }
+        // }
+        
+        $this->cleanForm(); 
+        
+        $this->article->user()->associate(Auth::user());
         
         session()->flash('message', 'Articolo creato con successo');
-
-            $this->cleanForm(); 
-            
-            $this->article->user()->associate(Auth::user());
-
-            $this->article->save(); 
-
     }
-        
-    
-    
-    
+
     
     public function updated($propertyName)
     {
@@ -102,19 +111,20 @@ class CreateArticle extends Component
     public function updateTemporaryImages()
     {
         if($this->validate([
-            'temporary_images.*' => 'image|max:1024',])) {
+            'temporary_images.*' => 'image|max:1024'])) {
                 foreach($this->temporary_images as $image) {
                     $this->images[] = $image; 
                 }
             }
-        }
+    }
+
         
-        public function removeImage($key)
-        {
-            if (in_array($key, array_keys($this->images))) {
-                unset($this->images[$key]); 
-            }
+    public function removeImage($key)
+    {
+        if (in_array($key, array_keys($this->images))) {
+            unset($this->images[$key]); 
         }
+    }
         
         
     
