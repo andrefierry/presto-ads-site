@@ -10,7 +10,7 @@
                             <div class="col-12 col-lg-6 p-0 d-flex justify-content-center">
                                 <div class="wrapper">
                                     <div class="product-img">
-                                        <img src="https://picsum.photos/20{{$key}}" height="420" width="327">
+                                        <img src="{{$article->images()->get()->isEmpty() ? Storage::url($article->images()->first()->path):'https://picsum.photos/200'}}" height="420" width="327">
                                     </div>
                                     <div class="product-info">
                                         <div class="product-text">
@@ -20,13 +20,13 @@
                                         </div>
                                         <div class="product-price-btn d-flex align-items-center">
                                             <p><span class="fs-3 text-card">{{$article->price}}€</span></p>
-                                            
                                             <a href="{{route('article.detail',compact('article'))}}"><button class="bg-button mt-3">dettaglio</button></a>
+                                            <a href="{{route('category.show', ['category'=>$article->category])}}" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-success"> Categoria:{{$article->category->name}}</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                    @empty
+                        @empty
                         <div class="col-12 ms-5">
                             <p class="h1 text display-5 fw-bold">La tua ricerca non corrisponde ad alcun articolo!</p>
                         </div> 

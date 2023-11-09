@@ -22,7 +22,14 @@
                         <div class="row">
                             <div class="col-12 d-flex flex-column align-items-center">
                                 <div id="showCarousel" class="carousel slide" data-bs-ride="carousel">
-                                    <div class="carousel-inner">
+                                    @if ($article_to_check->images)
+                                        <div class="carousel-inner">
+                                            @foreach ($article_to_check->images as $image)
+                                          <div class="carousel-item @if($loop->first)active @endif">
+                                            <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" width="300px" height="300px" alt="">
+                                            </div>
+                                            @endforeach
+                                            @else
                                         <div class="carousel-item active">
                                             <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded " alt="">
                                         </div>
@@ -33,6 +40,7 @@
                                             <img src="https://picsum.photos/id/29/1200/400" class="img-fluid p-3 rounded " alt="">
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#showCarousel" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

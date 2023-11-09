@@ -19,6 +19,7 @@
                     </ul>
                 </div>
                 @endif
+                
                 <div class="container-fluid shadow rounded mt-5 border border-dark">
                     <div class="row">
                         <div class="col-12 col-lg-6 mt-5 p-4">
@@ -38,6 +39,34 @@
                                     <label for="price" class="form-label text fs-5 fw-bold">{{__('ui.prezzo')}}</label>
                                     <input wire:model.live="price" type="text" class="form-control w-25" id="price">
                                 </div>
+                                @if ($photo)
+                                Photo Preview:
+
+                                <img class="mx-auto shadow rounded" width="100px" height="100px" src="{{ $photo->temporaryUrl() }}">
+                                @endif
+                                <input type="file" wire:model="photo">
+                                {{-- <div class="mb-3">
+                                    <input wire:model="temporary_images" type="file" name="images" multiple class="form-control @error('temporary_images.*') is-invalid @enderror" placeholder='Img'>
+                                    @error('temporary_images.*')
+                                    <p class="text-danger mt-2">{{$message}}</p>
+                                    @enderror
+                                </div> --}}
+                                @if (!empty($images))
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>Photo Preview:</p> 
+                                        <div class="row border border-4 border-info rounded shadow py-4">
+                                            @foreach ($images as $key->$image)
+                                            <div class="col my-3">
+                                                <div class="mx-auto shadow rounded" width="100px" height="100px" style="background-img: url({{$image->temporaryUrl()}})"></div>
+                                                <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" width="5px" height="5px" wire:click="removeImage({{$key}})">Cancella</button>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
                                 <div class="mb-3">
                                     <label for="category" class="form-label text fs-5 mb-3 fw-bold">{{__('ui.scegliCategoria')}}</label>
                                     <select wire:model.defer="category" id="category" class="form-control w-50">
@@ -46,7 +75,8 @@
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach
                                     </select>
-                                  </div>
+                                    
+                                </div>
                                 <div class="d-flex justify-content-center">
                                     <button type="submit" class="bg-button shadow px-5 mt-3" role="button">{{__('ui.creaArticolo')}}</button>
                                 </div>
