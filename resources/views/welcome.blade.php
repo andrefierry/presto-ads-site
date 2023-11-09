@@ -21,7 +21,7 @@
                 <div class="col-6 d-flex align-items-center justify-content-center">
                     <form action="{{route('articles.search')}}" method="GET" class="d-flex ms-auto me-5 w-50" role="search">
                         <input name="searched" class="form-control me-2 fs-5" type="search" placeholder="{{__('ui.ricerca')}}" aria-label="Search">
-                        <button class="btn btn-outline-success fs-5" type="submit">Search</button>
+                        <button class="btn btn-outline-primary fs-5 px-4 fw-bold" type="submit">Search</button>
                       </form>
                 </div>
             </div>
@@ -91,4 +91,6 @@
         @endforeach --}}
         </div>
     </div>
+
+    {{-- GIT PUSH PROVA --}}
 </x-layout>

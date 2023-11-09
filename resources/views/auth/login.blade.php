@@ -8,7 +8,7 @@
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-8 p-5 shadow form-custom rounded">
-          <div class="col-6 form p-5 rounded border border-2 shadow">
+          <div class="col-6 form p-5 rounded border border-2 shadow border border-dark">
             <h1 class="display-3 text-center text mb-4">Presto.it</h1>
             <h2 class="fw-bold display-5 text-center">Accedi</h1>
               <p class="text text-center mt-3 mb-4 fs-4">Entra nella tua area riservata</p>

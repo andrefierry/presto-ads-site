@@ -54,7 +54,7 @@
     </div>
   </div>
 </nav> --}}
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
   <div class="container-fluid">
     <div class="nav-item">
       <a class="text-decoration-none active ms-5 fs-1 fw-bold text d-flex align-items-center" aria-current="page" href="{{route('welcome')}}"><img class="me-3" src="/images/logo.png" alt="" width="50px" height="50px">Presto.it</a>
@@ -63,33 +63,40 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll ms-auto" style="--bs-scroll-height: 100px;">
-        <li>
-          <x-_locale lang='it' nation='it'/>
-        </li>
-        <li>
-          <x-_locale lang='en' nation='gb'/>
-        </li>
-        <li>
-          <x-_locale lang='es' nation='es'/>
-        </li>
+      <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll ms-auto d-flex align-items-center" style="--bs-scroll-height: 100px;">
+        <div class="dropdown mx-5">
+          <button class="btn border-0 text fs-4 fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Lang
+          </button>
+          <ul class="dropdown-menu rounded">
+            <li class="d-flex align-items-center">
+              <x-_locale lang='it' nation='it'/><h3>ITA</h3>
+            </li>
+            <li class="d-flex align-items-center">
+              <x-_locale lang='en' nation='gb'/><h3>EN</h3>
+            </li>
+            <li class="d-flex align-items-center">
+              <x-_locale lang='es' nation='es'/><h3>ES</h3>
+            </li>
+          </ul>
+        </div>
         <li class="nav-item dropdown mx-5 fw-bold text d-flex flex-column justify-content-center ">
           <a class="text-decoration-none text fs-4 active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">{{__('ui.categorie')}}</a>
           
-          <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+          <ul class="dropdown-menu shadow" aria-labelledby="categoriesDropdown">
             @foreach ($categories as $category)
-              <li><a class="dropdown-item fw-bold text" href="{{route('categoryShow',compact('category'))}}">{{($category->name)}}</a></li>
+              <li><a class="dropdown-item fw-bold text fs-5" href="{{route('categoryShow',compact('category'))}}">{{($category->name)}}</a></li>
               <li><hr class="dropdown-divider"></li>
             @endforeach
           </ul>
         </li>
         @guest
         <li class="nav-item">
-          <a class="nav-link fs-4 fw-bold text d-flex align-items-center" href="{{route('login')}}">{{__('ui.accedi')}} <i class="bi bi-person-circle fs-4 ms-1"></i></a>
+          <a class="nav-link fs-4 fw-bold text d-flex align-items-center mx-5" href="{{route('login')}}">{{__('ui.accedi')}} <i class="bi bi-person-circle fs-4 ms-1"></i></a>
         </li> 
         </ul>
         <div class="nav-item">
-          <a class="text-decoration-none fs-4 me-5 text-success d-flex align-items-center" href="{{route('register')}}">{{__('ui.registrati')}} <i class="bi bi-r-circle fs-4 ms-2 text-success"></i></a>
+          <a class="text-decoration-none fs-4 mx-5 text-success d-flex align-items-center fw-bold" href="{{route('register')}}">{{__('ui.registrati')}} <i class="bi bi-r-circle fs-4 ms-2 text-success"></i></a>
         </div>
         @endguest
         @auth

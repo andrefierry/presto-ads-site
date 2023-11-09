@@ -30,7 +30,6 @@ return [
     'scegliCategoria'=>'Scegli la categoria',
     'zonaRevisore'=>'Zona Revisore',
     'NoRevisioni'=>'Non ci sono articoli da revisionare',
-    'annulla'=>'Annulla',
     'descrizione'=>'Descrizione',
     'commento'=>'Inserisci il tuo commento',
 ];
