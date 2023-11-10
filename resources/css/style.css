@@ -145,7 +145,7 @@ swiper-container {
 
 
 .bg-revision{
-    background-color: rgb(237, 231, 231);
+    background-color: #290700;
 }
 
 .miniature:hover{
@@ -185,4 +185,9 @@ swiper-container {
 .img-preview{
     width: 100px;
     height: 100px;
+}
+
+.bg-all-articles:hover{
+    transition: 0.2s linear;
+    transform: scale(1.1);
 }

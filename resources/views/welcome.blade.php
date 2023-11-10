@@ -22,9 +22,9 @@
                   <a href="{{route('article.form-create')}}" class="ms-5 fs-5 mt-4 text-dark fw-bold">oppure puoi caricarne uno</a>
             </div>
         </div>
-            <div class="my-4 d-flex align-items-center container-fluid">
+            <div class=" d-flex align-items-center container-fluid  bg-carousel border-top border-dark">
                 {{-- <h1 class="text-center display-2 fw-bold title ms-5 d-flex align-items-center"><img class="me-3" src="/images/logo.png" alt="" width="80px" height="80px">Presto.it</h1> --}}
-                <div class="row align-items-center w-100 mt-5">
+                <div class="row align-items-center justify-content-center w-100 mt-5">
                     <div class="col-6 d-flex align-items-center justify-content-evenly">
                         <h2 class="display-4 ms-0 p-3 my-4 fw-bold text">{{__('ui.allArticles')}} <i class="bi bi-bag"></i></h2>
                     </div>
@@ -86,16 +86,16 @@
         </div>
     </div>
 
-    <div class="div-vuoto"></div>
+    <div class="div-vuoto d-flex align-items-center justify-content-center bg-carousel">
+        <a href="{{route('article.all',compact('articles'))}}" class=" display-5 text-decoration-none bg-button text-white px-5 py-3 bg-all-articles">Vedi tutti i nostri articoli</a>
+    </div>
 
-    <div class="container-fluid shadow mt-5 border-top border-dark">
+    <div class="container-fluid shadow  border-top border-dark">
         <div class="row p-5 shasow m-0 justify-content-center">
             @foreach ($categories as $category)
-            <div class="col-12 col-md-2 my-4 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-12 col-lg-2 my-4 d-flex flex-column justify-content-center align-items-center">
                 @if($category->name == 'Elettronica')
-                    <div>
-                        <i class="bi bi-lightning-charge-fill fs-1"></i>
-                    </div>
+                    <i class="bi bi-lightning-charge-fill fs-1"></i>
                 @elseif($category->name == 'Finanza')
                     <i class="bi bi-piggy-bank-fill fs-1"></i>
                 @elseif($category->name == 'Motori')

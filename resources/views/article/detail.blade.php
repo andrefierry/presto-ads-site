@@ -21,10 +21,6 @@
                         <img class="rounded shadow mt-5 me-5 miniature" src="https://picsum.photos/601" alt="" width="200px">
                         <img class="rounded shadow mt-5 me-5 miniature" src="https://picsum.photos/602" alt="" width="200px">
                         <img class="rounded shadow mt-5 me-5 miniature" src="https://picsum.photos/603" alt="" width="200px">
-                        <img class="rounded shadow mt-5 me-5 miniature" src="https://picsum.photos/604" alt="" width="200px">
-                        <img class="rounded shadow mt-5 me-5 miniature" src="https://picsum.photos/605" alt="" width="200px">
-                        <img class="rounded shadow mt-5 me-5 miniature" src="https://picsum.photos/606" alt="" width="200px">
-
                     </div>
                     <div class="d-flex justify-content-end">
                         <img class="rounded shadow mt-5 ms-5 grandezza-img" src="https://picsum.photos/600" alt="" width="700px">

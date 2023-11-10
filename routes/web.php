@@ -40,3 +40,5 @@ Route::patch('/annulla/scelta/{article}', [RevisorController::class, 'nullArticl
 Route::get('/richiesta/revisore', [RevisorController::class, 'formRevisor'])->name('revisor-form');
 
 Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
+
+Route::get('/tutti/articoli', [PublicController::class, 'allArticles'])->name('article.all');

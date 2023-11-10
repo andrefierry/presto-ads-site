@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class PublicController extends Controller
 {
     public function __construct(){
-        $this->middleware("auth")->except('categoryShow','welcome');
+        $this->middleware("auth")->except('categoryShow','welcome','setLanguage');
     }
 
     function welcome () {
@@ -19,13 +19,19 @@ class PublicController extends Controller
         return view('welcome', compact('articles'));
     }
 
+    function allArticles () {
+        $articles = Article::all();
+        return view('article.all', compact('articles'));
+    }
+
     public function create (){
         return view('article.form-create');
     }
 
     public function categoryShow(Category $category){
         $categories = Article::where('is_accepted', true)->orderBy('created_at', 'DESC')->get();
-        return view('categoryShow', compact('category', 'categories'));
+        $divCategories=Category::all();
+        return view('categoryShow', compact('category', 'categories','divCategories'));
     }
 
     public function articleDetail(Article $article){
