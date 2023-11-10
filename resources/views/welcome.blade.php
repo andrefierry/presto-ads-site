@@ -63,7 +63,7 @@
                         <div class="col-12  col-lg-5 p-0">
                             <div class="wrapper">
                                 <div class="product-img">
-                                <img src="https://picsum.photos/20{{$key}}" height="420" width="327">
+                                <img src="{{!$article->images()->get()->isEmpty() ? $article->images()->first()->getUrl(400,300) : 'https://picsum.photos/20'.$key}}" width="400px" height="420px">
                                 </div>    
                                 <div class="product-info">           
                                     <div class="product-text">

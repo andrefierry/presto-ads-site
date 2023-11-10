@@ -18,30 +18,31 @@
                 </form>
             </div>
                 @if ($article_to_check)
-                    <div class="container p-4 border border-1 mt-4 shadow rounded">
+                    <div class="container p-4 border border-1 mt-5 shadow rounded">
                         <div class="row">
                             <div class="col-12 d-flex flex-column align-items-center">
                                 <div id="showCarousel" class="carousel slide" data-bs-ride="carousel">
                                     @if ($article_to_check->images)
                                         <div class="carousel-inner">
                                             @foreach ($article_to_check->images as $image)
-                                          <div class="carousel-item">
-                                            <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" width="300px" height="300px" alt="">
-                                            </div>
+                                                <div class="carousel-item @if($loop->first)active @endif">
+                                                    <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" width="800px" height="300px" alt="">
+                                                </div>
                                             @endforeach
-                                            @else
-                                        <div class="carousel-item active">
-                                            <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded " alt="">
                                         </div>
-                                        <div class="carousel-item active">
-                                            <img src="https://picsum.photos/id/28/1200/400" class="img-fluid p-3 rounded " alt="">
+                                    @else
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded " alt="">
+                                            </div>
+                                            <div class="carousel-item active">
+                                                <img src="https://picsum.photos/id/28/1200/400" class="img-fluid p-3 rounded " alt="">
+                                            </div>
+                                            <div class="carousel-item active">
+                                                <img src="https://picsum.photos/id/29/1200/400" class="img-fluid p-3 rounded " alt="">
+                                            </div>
                                         </div>
-                                        <div class="carousel-item active">
-                                            <img src="https://picsum.photos/id/29/1200/400" class="img-fluid p-3 rounded " alt="">
-                                        </div>
-                                    </div>
                                     @endif
-                                </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#showCarousel" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">prev</span>
@@ -76,4 +77,5 @@
             </div>
         </div>
     </div>
+    <div class="div-vuoto"></div>
 </x-layout>

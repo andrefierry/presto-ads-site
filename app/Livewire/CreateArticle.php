@@ -5,8 +5,10 @@ namespace App\Livewire;
 use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
-use Illuminate\Support\Facades\Auth;
+use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads; 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class CreateArticle extends Component
 {
@@ -23,6 +25,8 @@ class CreateArticle extends Component
     public $article; 
     public $image; 
     public $form_id; 
+
+    public $validated;
     
     
     protected $rules = [
@@ -30,8 +34,8 @@ class CreateArticle extends Component
         'body'=>'required',
         'price'=>'required',
         'category'=>'required',
-        'images.*' => 'image|max:1024',
-        'temporary_images.*' =>'image|max:1024', 
+        'images.*' => 'image|max:2048',
+        'temporary_images.*' =>'image|max:2048', 
         
     ];
     
@@ -43,72 +47,18 @@ class CreateArticle extends Component
         'category.required'=> 'È necessario selezionare una categoria',
         'temporary_images.required' => "È obbligatorio caricare l'immagine", 
         'temporary_images.*.image' => "Il file deve essere un'immagine", 
-        'temporary_images.*.max' => "L'immagine dev'essere massimo di 1 mb", 
+        'temporary_images.*.max' => "L'immagine dev'essere massimo di 2 mb", 
         'images.image' => "L'immagine deve essere un'immagine", 
-        'images.max' => "L'immagine deve essere massimo di 1 mb",
+        'images.max' => "L'immagine deve essere massimo di 2 mb",
     ];
     
     public function updatedPhoto()
     {
         $this->validate([
-            'photo' => 'image|max:1024',
+            'photo' => 'image|max:2048',
         ]);
     }
-
-    public function store()
-    {
-        $this->validate();
-
-        // Article::create([
-            
-        // ]);
-
-        // $this->article = Category::find($this->category)->articles()->create([
-        //     'title'=>$this->title,
-        //     'body'=>$this->body,
-        //     'price'=>$this->price,
-        //     'user_id'=>Auth::user()->id, 
-        //     'category_id'=>$this->category,
-        // ]);
-
-        $this->article = Category::find($this->category)->articles()->create([
-                'title'=>$this->title,
-                'body'=>$this->body,
-                'price'=>$this->price,
-                'user_id'=>Auth::user()->id, 
-                'category_id'=>$this->category,
-        ]);
-        if(count($this->images))
-        {
-            foreach($this->images as $image) {
-                $this->article->images()->create(['path' => $image->store('images', 'public')]);
-            }
-        }
-
-        $this->article->save();
-
-        // if(count($this->images))
-        // {
-        //     foreach($this->images as $image) {
-        //         $this->article->images()->create(['path' => $image->store('images', 'public')]);
-        //     }
-        // }
-        
-        $this->cleanForm(); 
-        
-        $this->article->user()->associate(Auth::user());
-        
-        session()->flash('message', 'Articolo creato con successo');
-    }
-
-    
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
-    }
-    
-    
-    public function updateTemporaryImages()
+    public function updatedTemporaryImages()
     {
         if($this->validate([
             'temporary_images.*' => 'image|max:1024'])) {
@@ -117,33 +67,78 @@ class CreateArticle extends Component
                 }
             }
     }
-
-        
     public function removeImage($key)
     {
         if (in_array($key, array_keys($this->images))) {
             unset($this->images[$key]); 
         }
     }
-        
-        
     
-        public function update($propertyName)
-        {
-            $this->validateOnly($propertyName); 
-        }
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+    
+    public function cleanForm()
+    {
+        $this->title =''; 
+        $this->body =''; 
+        $this->category = ''; 
+        $this->image='';
+        $this->images =[]; 
+        $this->temporary_images = []; 
+        $this->form_id = rand(); 
+    }
+    public function store()
+    {
+        $this->validate();
         
-        public function cleanForm()
-        {
-            $this->title =''; 
-            $this->body =''; 
-            $this->category = ''; 
-            $this->image='';
-            $this->images =[]; 
-            $this->temporary_images = []; 
-            $this->form_id = rand(); 
-        }
+        // Article::create([
+        //     'title'=>$this->title,
+        //     'body'=>$this->body,
+        //     'price'=>$this->price,
+        //     'user_id'=>Auth::user()->id, 
+        //     'category_id'=>$this->category,
+        // ]);
         
+        
+        // $this->article = Category::find($this->category)->articles()->create($this->validate());
+        // if(count($this->images))
+        // {
+        //     foreach($this->images as $image) {
+        //         $this->article->images()->create(['path' => $image->store('images', 'public')]);
+        //     }
+        // };
+
+         $this->article = Category::find($this->category)->articles()->create([
+            'title'=>$this->title,
+            'body'=>$this->body,
+            'price'=>$this->price,
+            'user_id'=>Auth::user()->id, 
+            'category_id'=>$this->category,
+         ]);
+
+        if(count($this->images))
+        {
+            foreach($this->images as $image) {
+                // $this->article->images()->create(['path' => $image->store('images', 'public')]);
+                $newFileName = "articles/{$this->article->id}";
+                $newImage = $this->article->images()->create(['path'=> $image->store($newFileName,'public')]);
+                dispatch(new ResizeImage($newImage->path,400,300));
+            }
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
+        };
+
+        session()->flash('message', 'Articolo creato con successo');
+        $this->cleanForm(); 
+        $this->article->user()->associate(Auth::user());
+        $this->article->save();
+
+        // dd($this->images);   
+    }
+
+    
+     
         public function render()
         {
             $categories = Category::all(); 
@@ -151,4 +146,4 @@ class CreateArticle extends Component
             
         }
         
-    }
+}

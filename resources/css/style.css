@@ -40,10 +40,10 @@ body {
 }
 
 .form-create{
-    background: url('/public/images/bg-login.png');
+    background: url('/public/images/image-create-article.jpg');
     /* background-size: contain; */
     background-repeat: no-repeat;
-    background-position: right;
+    background-size: cover;
 }
 
 .bg-button{
@@ -180,4 +180,9 @@ swiper-container {
 
 .bg-carousel{
     background-color: #1f06011b;
+}
+
+.img-preview{
+    width: 100px;
+    height: 100px;
 }

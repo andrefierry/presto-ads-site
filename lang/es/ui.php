@@ -2,7 +2,6 @@
 
 return [
     'allArticles'=>'Aqui està los notros articles',
-    'annulla'=>'Anular',
     'articoloDaRevisionare'=>'Este el artìculo che hay che revisar',
     'accetta'=>'Acepta',
     'rifiuta'=>'Seniega',
