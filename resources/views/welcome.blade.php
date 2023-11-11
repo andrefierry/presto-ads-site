@@ -13,20 +13,21 @@
                 
             </div>
         <div class="w-100 bg-welcome container-fluid">
-            <div class="col-6 d-flex flex-column  justify-content-center mt-5">
+            <div class="col-6 d-flex flex-column  justify-content-center mt-5 bg-cerca">
                 <h2 class="ms-5 display-3 fw-bold text mt-5">Cerca qui i tuoi articoli</h2>
+                <a href="{{route('article.form-create')}}" class="ms-5 fs-5 mt-4 text-dark fw-bold d-inline-block d-md-none">oppure puoi caricarne uno</a>
                 <form action="{{route('articles.search')}}" method="GET" class="d-flex ms-5 me-5 w-75 mt-5" role="search">
                     <input name="searched" class="form-control me-2 fs-5 bg-transparent border border-dark text-dark" type="search" placeholder="{{__('ui.ricerca')}}" aria-label="Search">
                     <button class="btn btn-dark fs-5 px-4 fw-bold" type="submit">Search</button>
                   </form>
-                  <a href="{{route('article.form-create')}}" class="ms-5 fs-5 mt-4 text-dark fw-bold">oppure puoi caricarne uno</a>
+                  <a href="{{route('article.form-create')}}" class="ms-5 fs-5 mt-4 text-dark fw-bold d-none d-md-inline-block">oppure puoi caricarne uno</a>
             </div>
         </div>
             <div class=" d-flex align-items-center container-fluid  bg-carousel border-top border-dark">
                 {{-- <h1 class="text-center display-2 fw-bold title ms-5 d-flex align-items-center"><img class="me-3" src="/images/logo.png" alt="" width="80px" height="80px">Presto.it</h1> --}}
                 <div class="row align-items-center justify-content-center w-100 mt-5">
                     <div class="col-6 d-flex align-items-center justify-content-evenly">
-                        <h2 class="display-4 ms-0 p-3 my-4 fw-bold text">{{__('ui.allArticles')}} <i class="bi bi-bag"></i></h2>
+                        <h2 class="display-4 ms-0 p-3 my-4 fw-bold text text-center">{{__('ui.allArticles')}} <i class="bi bi-bag"></i></h2>
                     </div>
                 </div>
             </div>
@@ -36,17 +37,17 @@
             </div> --}}
                 @foreach ($articles as $key => $article )
                 <div class="col-12 p-0 d-lg-none">
-                    <div class="wrapper ">
+                    <div class="wrapper">
                         <div class="product-img">
-                        <img src="https://picsum.photos/20{{$key}}" height="420" width="327">
+                        <img src="{{!$article->images()->get()->isEmpty() ? $article->images()->first()->getUrl(400,300) : 'https://picsum.photos/20'.$key}}" height="420" width="327">
                         </div>
                         <div class="product-info">
                             <div class="product-text">
-                                <h1>{{$article->title}}</h1>
+                                <h1 class="pt-1">{{$article->title}}</h1>
                                 <h2>Presto.it</h2>
                                 <p>{{$article->body}}</p>
                             </div>
-                            <p><span class="fs-3">{{$article->price}}€</span></p>
+                            <p><span class="fs-3 ms-4">{{$article->price}}€</span></p>
                             <div class="product-price-btn d-flex align-items-center">
                                 <button type="button" class="">{{__('ui.dettaglio')}}</button>
                             </div>

@@ -63,7 +63,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll ms-auto d-flex align-items-center" style="--bs-scroll-height: 100px;">
+      <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll ms-auto d-flex align-items-center bg-toggle" style="--bs-scroll-height: 270px;">
         <div class="dropdown mx-5">
           <button class="btn border-0 text fs-4 fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Lang

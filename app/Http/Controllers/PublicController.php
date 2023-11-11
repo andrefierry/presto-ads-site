@@ -50,7 +50,8 @@ class PublicController extends Controller
     }
 
     public function profilePage(){
-        return view('profile.page');
+        $articles = Article::all();
+        return view('profile.page',compact('articles'));
     }
 
     
