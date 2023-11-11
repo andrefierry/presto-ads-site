@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 p-3 bg-revision">
-                <h1 class="display-2 fw-bold text">{{$article_to_check ? __('ui.articoloDaRevisionare') : __('ui.NoRevisioni') }}</h1>
+                <h1 class="display-2 text-white">{{$article_to_check ? __('ui.articoloDaRevisionare') : __('ui.NoRevisioni') }}</h1>
             </div>
             <div>
                 @if (session('message'))

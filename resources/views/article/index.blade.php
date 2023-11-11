@@ -4,7 +4,7 @@
             <div class="col-12">
                 <div class="row">
                     <div class="col-12 ms-5">
-                        <p class="h1 text display-5 fw-bold">Ecco qui i risultati della tua ricerca</p>
+                        <p class="h1 text display-5 text-white">Ecco qui i risultati della tua ricerca</p>
                     </div> 
                     @forelse($articles as $key=>$article)
                             <div class="col-12 col-lg-6 p-0 d-flex justify-content-center">
