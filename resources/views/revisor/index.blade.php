@@ -10,13 +10,6 @@
                 {{session('message')}}
             </div>
             @endif
-            <div class="col-12 col-md-4 d-flex justify-content-center mt-5">
-                <form action="{{route('revisor.null_article', ['article'=>$article_to_null])}}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button type="submit" class="btn btn-secondary shadow px-5">{{__('ui.annulla')}}</button>
-                </form>
-            </div>
                 @if ($article_to_check)
                     <div class="container p-4 border border-1 mt-5 shadow rounded">
                         <div class="row">
@@ -57,14 +50,14 @@
                             <p class="card-footer text-center">{{__('ui.pubblicazione')}}: {{$article_to_check->created_at->format('d/m/Y')}}</p>
                         </div>
                         <div class="row">
-                            <div class="col-12 col-md-4 d-flex justify-content-center">
+                            <div class="col-12 col-md-6 d-flex justify-content-center">
                                 <form action="{{route('revisor.accept_article', ['article'=>$article_to_check])}}" method="POST">
                                     @csrf
                                     @method('PATCH')
                                     <button type="submit" class="btn btn-success shadow px-5">{{__('ui.accetta')}}</button>
                                 </form>
                             </div>
-                            <div class="col-12 col-md-4 d-flex justify-content-center">
+                            <div class="col-12 col-md-6 d-flex justify-content-center">
                                 <form action="{{route('revisor.reject_article', ['article'=>$article_to_check])}}" method="POST">
                                     @csrf
                                     @method('PATCH')
@@ -74,6 +67,13 @@
                         </div>
                     </div>
                 @endif
+            </div>
+            <div class="col-12 col-md-4 d-flex justify-content-center mt-5 w-100">
+                <form action="{{route('revisor.null_article', ['article'=>$article_to_null])}}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button type="submit" class="btn btn-secondary shadow px-5">{{__('ui.annulla')}}</button>
+                </form>
             </div>
         </div>
     </div>

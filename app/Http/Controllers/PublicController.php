@@ -31,7 +31,8 @@ class PublicController extends Controller
     public function categoryShow(Category $category){
         $categories = Article::where('is_accepted', true)->orderBy('created_at', 'DESC')->get();
         $divCategories=Category::all();
-        return view('categoryShow', compact('category', 'categories','divCategories'));
+        $categoriesFiltered = $categories->where('category_id', '==', $category->id);
+        return view('categoryShow', compact('category','divCategories', 'categoriesFiltered'));
     }
 
     public function articleDetail(Article $article){
@@ -40,13 +41,16 @@ class PublicController extends Controller
 
     public function searchArticles(Request $request){
         $articles = Article::search($request->searched)->where('is_accepted',true)->paginate(10);
-
         return view('article.index'  ,compact('articles'));
     }
 
     public function setLanguage($lang){
         session()->put('locale', $lang);
         return redirect()->back();
+    }
+
+    public function profilePage(){
+        return view('profile.page');
     }
 
     

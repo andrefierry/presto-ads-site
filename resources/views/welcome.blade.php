@@ -14,7 +14,7 @@
             </div>
         <div class="w-100 bg-welcome container-fluid">
             <div class="col-6 d-flex flex-column  justify-content-center mt-5">
-                <h2 class="ms-5 display-3 fw-bold text mt-5" >Cerca qui i tuoi articoli</h2>
+                <h2 class="ms-5 display-3 fw-bold text mt-5">Cerca qui i tuoi articoli</h2>
                 <form action="{{route('articles.search')}}" method="GET" class="d-flex ms-5 me-5 w-75 mt-5" role="search">
                     <input name="searched" class="form-control me-2 fs-5 bg-transparent border border-dark text-dark" type="search" placeholder="{{__('ui.ricerca')}}" aria-label="Search">
                     <button class="btn btn-dark fs-5 px-4 fw-bold" type="submit">Search</button>

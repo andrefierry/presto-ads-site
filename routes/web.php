@@ -42,3 +42,5 @@ Route::get('/richiesta/revisore', [RevisorController::class, 'formRevisor'])->na
 Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
 
 Route::get('/tutti/articoli', [PublicController::class, 'allArticles'])->name('article.all');
+
+Route::get('/pagina/profilo', [PublicController::class, 'profilePage'])->name('profile.page');

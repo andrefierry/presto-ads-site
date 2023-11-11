@@ -114,7 +114,7 @@
               </li>
           @endif
           <li class="nav-item mx-5">
-            <p class="nav-link fs-4 active d-flex align-items-center my-0 text fw-bold" href="">{{__('ui.benvenuto')}} {{Auth::user()->name}}<i class="bi bi-person-fill ms-2 fs-4"></i></p>
+            <a href="{{route('profile.page')}}" class="text-decoration-none"><p class="nav-link fs-4 active d-flex align-items-center my-0 text fw-bold" href="">{{__('ui.benvenuto')}} {{Auth::user()->name}}<i class="bi bi-person-fill ms-2 fs-4"></i></p></a>
           </li>
           <li class="nav-item mx-5">
             <a class="nav-link fs-4 active d-flex align-items-center fw-bold text" href="{{route('article.form-create')}}">{{__('ui.aggiungiArticoli')}} <i class="bi bi-plus-circle-dotted ms-2 fs-4"></i></a>
