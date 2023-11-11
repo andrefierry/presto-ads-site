@@ -1,9 +1,9 @@
 <x-layout>
-    <h1 class="text-center text-white bg-revision mb-5 p-4 display-2 ">Ecco tutti i nostri articoli</h1>
+    <h1 class="text-center text my-5 display-2">Ecco tutti i nostri articoli</h1>
     <div class="container-fluid">
         <div class="row">
             @foreach($articles as $key=>$article)
-            <div class="col-12 col-lg-6 p-0 d-flex justify-content-center">
+            <div class="col-12 col-lg-4 p-0 d-flex justify-content-center">
                 <div class="wrapper">
                     <div class="product-img">
                     <img src="https://picsum.photos/20{{$key}}" height="420" width="327">
