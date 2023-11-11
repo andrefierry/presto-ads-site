@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid bg-category mb-5 p-0">
         <div class="row bg-revision p-0">
-            <div class="col-12 display-2 p-4  text-white text-center text-lg-start">{{__('ui.visualizzaCategoria')}} {{$category->name}}</div>
+            <div class="col-12 display-2 p-4  text-white text-center text-lg-center">{{__('ui.visualizzaCategoria')}} {{$category->name}}</div>
         </div>
         <div class="row p-5 m-0 justify-content-center border-bottom border-dark bg-carousel">
             @foreach ($divCategories as $category)
