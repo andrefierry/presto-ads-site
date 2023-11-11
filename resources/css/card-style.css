@@ -1,6 +1,6 @@
 .wrapper {
-    height: 420px;
-    width: 654px;
+    height: 320px;
+    width: 504px;
     margin: 50px auto;
     border-radius: 7px 7px 7px 7px;
     /* VIA CSS MATIC https://goo.gl/cIbnS */
@@ -26,8 +26,8 @@
 
   .product-img {
     float: left;
-    height: 420px;
-    width: 327px;
+    height: 320px;
+    width: 252px;
   }
   
   .product-img img {
@@ -36,14 +36,14 @@
   
   .product-info {
     float: left;
-    height: 420px;
-    width: 327px;
+    height: 320px;
+    width: 252px;
     border-radius: 0 7px 10px 7px;
     background-color: #ffffff;
   }
   
   .product-text {
-    height: 240px;
+    height: 200px;
     width: 327px;
   }
   
@@ -57,6 +57,7 @@
   .product-text h1,
   .product-price-btn p {
     font-family: 'Quicksand', sans-serif;
+    
   }
   
   .product-text h2 {
@@ -70,7 +71,7 @@
   }
   
   .product-text p {
-    height: 125px;
+    height: 95px;
     margin: 0 0 0 38px;
     font-family: 'Quicksand', sans-serif;
     color: #8d8d8d;

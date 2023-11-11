@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 p-3 bg-revision">
-                <h1 class="display-2 text-white text-center">{{$article_to_check ? __('ui.articoloDaRevisionare') : __('ui.NoRevisioni') }}</h1>
+                <h1 class="display-6 text-white text-center">{{$article_to_check ? __('ui.articoloDaRevisionare') : __('ui.NoRevisioni') }}</h1>
             </div>
             <div>
                 @if (session('message'))
@@ -11,7 +11,7 @@
             </div>
             @endif
                 @if ($article_to_check)
-                    <div class="container p-4 border border-1 mt-5 shadow rounded">
+                    <div class="container p-4 border border-1 mt-5 shadow rounded bg-carousel border border-dark shadow">
                         <div class="row">
                             <div class="col-12 d-flex flex-column align-items-center">
                                 <div id="showCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -19,7 +19,7 @@
                                         <div class="carousel-inner">
                                             @foreach ($article_to_check->images as $image)
                                                 <div class="carousel-item @if($loop->first)active @endif">
-                                                    <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" width="800px" height="300px" alt="">
+                                                    <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" width="600px" height="300px" alt="">
                                                 </div>
                                             @endforeach
                                         </div>

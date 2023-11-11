@@ -65,7 +65,7 @@ body {
 .navbar{
     background-color: white;
     /* height: 90px; */
-    height: 80px;
+    height: 70px;
 }
 
 .nav-link{
@@ -211,7 +211,7 @@ swiper-container {
 }
 
 .icona-profilo{
-    font-size: 200px;
+    font-size: 170px;
     color: var(--primary-color);
     /* width: 200px;
     height: 120px; */
@@ -246,6 +246,6 @@ swiper-container {
 
 }
 
-.bg-toggle{
+/* .bg-toggle{ */
     /* backdrop-filter: blur(30px); */
-}
+/* } */
