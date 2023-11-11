@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class PublicController extends Controller
 {
     public function __construct(){
-        $this->middleware("auth")->except('categoryShow','welcome','setLanguage');
+        $this->middleware("auth")->except('categoryShow','welcome','setLanguage','allArticles');
     }
 
     function welcome () {
