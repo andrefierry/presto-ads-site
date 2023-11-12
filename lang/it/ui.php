@@ -45,4 +45,12 @@ return [
     'Elettronica' => 'Elettronica',
     'Motori' => 'Motori',
     'Usato' => 'Usato',
+    'ricercaArticoli' => 'Cerca qui i tuoi articoli',
+    'oppureCarica' => 'oppure caricane uno',
+    'vediTutti' => 'Vedi tutti i nostri articoli',
+    'seiRevisore' => 'Sei un revisore',
+    'nonSeiRevisore' => 'Non sei revisore',
+    'articoliCreati' => 'Ecco gli articoli che hai creato',
+    'noArticoli' => 'Non è presente alcun articolo per questa categoria!',
+    'pubblica' => 'Pubblicane uno:'
 ];

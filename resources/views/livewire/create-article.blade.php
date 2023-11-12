@@ -1,4 +1,4 @@
-<div>
+<div class="my-5">
     <div class="container-fluid mt-5 vh-100">
         <div class="row justify-content-center">
             {{-- <div class=" mb-5 bg-welcome">
@@ -27,16 +27,16 @@
                                 @csrf
                                 <h2 class="d-block d-lg-none mb-3 text fw-bold text-center">{{__('ui.creaArticolo')}}</h2>
                                 <div class="mb-4">
-                                    <label for="title" class="form-label text fs-4 fw-bold">{{__('ui.inserireTitolo')}}</label>
+                                    <label for="title" class="form-label text fs-6 fw-bold">{{__('ui.inserireTitolo')}}</label>
                                     <input wire:model.live="title" type="text" class="form-control w-100" id="title">
                                 </div>
-                                <label class="form-label text fs-5 fw-bold">{{__('ui.descrizione')}}</label>
+                                <label class="form-label text fs-6 fw-bold">{{__('ui.descrizione')}}</label>
                                 <div class="form-floating mb-4">
                                     <textarea wire:model.live="body" class="form-control" placeholder="Leave a comment here" id="body" style="height: 100px"></textarea>
                                     <label for="body">{{__('ui.commento')}}:</label>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="price" class="form-label text fs-5 fw-bold">{{__('ui.prezzo')}}</label>
+                                    <label for="price" class="form-label text fs-6 fw-bold">{{__('ui.prezzo')}}</label>
                                     <input wire:model.live="price" type="text" class="form-control w-25" id="price">
                                 </div>
                                 {{-- @if ($photo)
@@ -56,13 +56,13 @@
 
                                 <div class="row">
                                     <div class="col-12 d-flex flex-column">
-                                        <p>Photo Preview:</p> 
+                                        <p class="text fw-bold">Photo Preview:</p> 
                                         <div class="row border border-4 border-info rounded shadow py-4">
                                             @foreach ($images as $key=>$image)
                                             {{-- <img class="my-3 shadow rounded" width="100px" height="100px" src="{{ $photo->temporaryUrl() }}">     --}}
-                                            <div class="col my-3" >
+                                            <div class="col my-2" >
                                                 <div class="mx-auto shadow rounded img-preview" style="background-image: url({{$image->temporaryUrl()}});"></div>
-                                                <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" width="5px" height="5px" wire:click="removeImage({{$key}})">Cancella</button>
+                                                <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto fs-6" width="5px" height="5px" wire:click="removeImage({{$key}})">Cancella</button>
                                             </div>
                                             @endforeach
                                         </div>
@@ -70,7 +70,7 @@
                                 </div>
                                 @endif
                                 <div class="mb-3">
-                                    <label for="category" class="form-label text fs-5 mb-3 fw-bold">{{__('ui.scegliCategoria')}}</label>
+                                    <label for="category" class="form-label text fs-6 mb-3 fw-bold">{{__('ui.scegliCategoria')}}</label>
                                     <select wire:model.defer="category" id="category" class="form-control w-50">
                                         {{-- <option value=""> Scegli la tua categoria</option> --}}
                                         @foreach ($categories as $category )
@@ -85,11 +85,12 @@
                             </form>
                         </div>
                         <div class="d-sm-none col-md-4 col-lg-5 d-lg-flex align-items-center justify-content-center border border-left-2 form-create">
-                            <h1 class="fw-bold mt-1 title text-center display-2 ">{{__('ui.creaArticolo')}}</h1>
+                            <h1 class="fw-bold mt-1 title text-center display-4 ">{{__('ui.creaArticolo')}}</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="div-vuoto"></div>
 </div>

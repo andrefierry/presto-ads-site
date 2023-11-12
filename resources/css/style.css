@@ -65,7 +65,7 @@ body {
 .navbar{
     background-color: white;
     /* height: 90px; */
-    height: 80px;
+    height: 70px;
 }
 
 .nav-link{
@@ -211,7 +211,7 @@ swiper-container {
 }
 
 .icona-profilo{
-    font-size: 200px;
+    font-size: 150px;
     color: var(--primary-color);
     /* width: 200px;
     height: 120px; */
@@ -234,8 +234,8 @@ swiper-container {
 }
 
 .status-online{
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     border: 1px solid green;
     background-color: green;
     border-radius: 50%;
@@ -246,6 +246,6 @@ swiper-container {
 
 }
 
-/* .bg-toggle{ 
-     backdrop-filter: blur(30px); 
-}  */
+/* .bg-toggle{ */
+    /* backdrop-filter: blur(30px); */
+/* } */
