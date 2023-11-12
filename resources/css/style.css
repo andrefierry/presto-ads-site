@@ -211,7 +211,7 @@ swiper-container {
 }
 
 .icona-profilo{
-    font-size: 170px;
+    font-size: 150px;
     color: var(--primary-color);
     /* width: 200px;
     height: 120px; */
@@ -234,8 +234,8 @@ swiper-container {
 }
 
 .status-online{
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     border: 1px solid green;
     background-color: green;
     border-radius: 50%;

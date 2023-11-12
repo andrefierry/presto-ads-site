@@ -70,13 +70,13 @@
           </button>
           <ul class="dropdown-menu rounded">
             <li class="d-flex align-items-center">
-              <x-_locale lang='it' nation='it'/><h3>ITA</h3>
+              <x-_locale lang='it' nation='it'/><h6 class="mb-0">ITA</h6>
             </li>
             <li class="d-flex align-items-center">
-              <x-_locale lang='en' nation='gb'/><h3>EN</h3>
+              <x-_locale lang='en' nation='gb'/><h6 class="mb-0">EN</h6>
             </li>
             <li class="d-flex align-items-center">
-              <x-_locale lang='es' nation='es'/><h3>ES</h3>
+              <x-_locale lang='es' nation='es'/><h6 class="mb-0">ES</h6>
             </li>
           </ul>
         </div>

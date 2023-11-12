@@ -3,25 +3,39 @@
     <div class="container-profilo d-flex align-items-center">
         <i class="bi bi-person-circle icona-profilo ms-5"></i>
         <div class="d-flex flex-column ms-4 text">
-            <h1 class="display-5">{{Auth::user()->name}}</h1>
-            <p class="fs-3">{{Auth::user()->email}}</p>
+            <h1 class="display-6">{{Auth::user()->name}}</h1>
+            <p class="fs-5">{{Auth::user()->email}}</p>
         </div>
-        <div class="ms-auto d-flex">
-            <div class="status-online ms-3 d-flex align-items-center mt-4 me-4"></div>
-            <h2 class="text-success display-6 me-5">Online</h2>
+        <div class="ms-auto d-flex align-items-center">
+            <div class="status-online ms-3 d-flex  me-2"></div>
+            <h2 class="text-success fs-2 me-5">Online</h2>
         </div>
     </div>
-    @if(Auth::user()->is_revisor)
-        <div class="d-flex display-6 me-5 justify-content-end mt-5">
-            <p class="me-5">Sei un revisore</p>
-            <i class="bi bi-eye-fill"></i>
+    <div class="row align-items-center mt-5">
+        <div class="col-6 mt-5">
+            <div class="d-flex display-6 justify-content-start align-items-center ms-2">
+                <i class="bi bi-twitter-x text-dark me-5 ms-5"></i>
+                <i class="bi bi-facebook text-primary me-5"></i>
+                <i class="bi bi-pinterest text-danger me-5"></i>
+                <i class="bi bi-instagram icona-insta"></i>
+            </div>
         </div>
-    @else
-        <div class="d-flex display-6 me-5 justify-content-end mt-5">
-            <p class="me-5">Non sei un revisore</p>
-            <i class="bi bi-eye-slash-fill"></i>
+        @if(Auth::user()->is_revisor)
+            <div class="col-6 mt-5">
+                <div class="d-flex display-6 me-5 justify-content-end align-items-center">
+                    <p class="me-5">Sei un revisore</p>
+                    <i class="bi bi-eye-fill"></i>
+                </div>
         </div>
-    @endif
+        @else
+        <div class="col-6 mt-5">
+            <div class="d-flex display-6 me-5 justify-content-end">
+                <p class="me-5">Non sei un revisore</p>
+                <i class="bi bi-eye-slash-fill"></i>
+            </div>
+        </div>
+        @endif
+    </div>
     <div class="container-fluid mt-5">
         <div class="row">
              <h2 class=" py-5 text-white display-6 text text-center fw-bold">Ecco gli articoli che hai creato</h2>
@@ -51,10 +65,4 @@
         </div>
     </div>
     <div class="div-vuoto"></div>
-    <div class="d-flex display-5 justify-content-center align-items-center mb-5">
-        <i class="bi bi-twitter-x text-dark me-5"></i>
-        <i class="bi bi-facebook text-primary me-5"></i>
-        <i class="bi bi-pinterest text-danger me-5"></i>
-        <i class="bi bi-instagram icona-insta"></i>
-    </div>
 </x-layout>

@@ -7,10 +7,15 @@
                         <p class="h1 text display-5 fw-bold">Ecco qui i risultati della tua ricerca</p>
                     </div> 
                     @forelse($articles as $key=>$article)
+                    <div class="d-flex justify-content-center mt-4">
+                        <div class="w-25 text-center">
+                            <a href="{{route('categoryShow', ['category'=>$article->category])}}" class="my-2 border-top pt-2 border-dark card-link shadow bg-button px-5"> Categoria: {{$article->category->name}}</a>
+                        </div>
+                    </div>
                             <div class="col-12 col-lg-6 p-0 d-flex justify-content-center">
                                 <div class="wrapper">
                                     <div class="product-img">
-                                        <img src="{{$article->images()->get()->isEmpty() ? Storage::url($article->images()->first()->path):'https://picsum.photos/200'}}" height="420" width="327">
+                                        <img src="{{$article->images()->get()->isEmpty() ? Storage::url($article->images()->first()->path):'https://picsum.photos/200'}}" width="252px" height="319px">
                                     </div>
                                     <div class="product-info">
                                         <div class="product-text">
@@ -21,7 +26,6 @@
                                         <div class="product-price-btn d-flex align-items-center">
                                             <p><span class="fs-3 text-card">{{$article->price}}€</span></p>
                                             <a href="{{route('article.detail',compact('article'))}}"><button class="bg-button mt-3">dettaglio</button></a>
-                                            <a href="{{route('category.show', ['category'=>$article->category])}}" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-success"> Categoria:{{$article->category->name}}</a>
                                         </div>
                                     </div>
                                 </div>

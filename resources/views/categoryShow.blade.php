@@ -5,31 +5,31 @@
         </div>
         <div class="row p-5 m-0 justify-content-center border-bottom border-dark bg-carousel">
             @foreach ($divCategories as $category)
-            <div class="col-12 col-lg-2 my-4 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-12 col-lg-2 my-3 d-flex flex-column justify-content-center align-items-center">
                 @if($category->name == 'Elettronica')
                     <div>
-                        <i class="bi bi-lightning-charge-fill fs-4"></i>
+                        <i class="bi bi-lightning-charge-fill fs-3"></i>
                     </div>
                 @elseif($category->name == 'Finanza')
-                    <i class="bi bi-piggy-bank-fill fs-4"></i>
+                    <i class="bi bi-piggy-bank-fill fs-3"></i>
                 @elseif($category->name == 'Motori')
-                    <i class="bi bi-car-front-fill fs-4"></i>
+                    <i class="bi bi-car-front-fill fs-3"></i>
                 @elseif($category->name == 'Viaggi')    
-                    <i class="bi bi-geo-alt-fill fs-4"></i>
+                    <i class="bi bi-geo-alt-fill fs-3"></i>
                 @elseif($category->name == 'Collezionismo')  
-                    <i class="bi bi-box-seam fs-4"></i>
+                    <i class="bi bi-box-seam fs-3"></i>
                 @elseif($category->name == 'Abbigliamento')  
-                    <i class="bi bi-handbag fs-4"></i>
+                    <i class="bi bi-handbag fs-3"></i>
                 @elseif($category->name == 'Immobili') 
-                    <i class="bi bi-house-check-fill fs-4"></i>
+                    <i class="bi bi-house-check-fill fs-3"></i>
                 @elseif($category->name == 'Lavoro') 
-                    <i class="bi bi-person-workspace fs-4"></i>
+                    <i class="bi bi-person-workspace fs-3"></i>
                 @elseif($category->name == 'Usato')
-                    <i class="bi bi-recycle fs-4"></i>
+                    <i class="bi bi-recycle fs-3"></i>
                     @elseif($category->name == 'Sport')
-                    <i class="bi bi-bicycle fs-4"></i>
+                    <i class="bi bi-bicycle fs-3"></i>
                 @endif
-                <a class="fw-bold text fs-3 text-decoration-none text-center" href="{{route('categoryShow',compact('category'))}}">{{__( 'ui.'. $category->name )}}</a>
+                <a class="fw-bold text fs-4 text-decoration-none text-center" href="{{route('categoryShow',compact('category'))}}">{{__( 'ui.'. $category->name )}}</a>
             </div>
             @endforeach
         </div>
