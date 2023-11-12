@@ -1,9 +1,9 @@
 <x-layout>
     <div class="container-fluid bg-category mb-5 p-0">
         <div class="row bg-revision p-0">
-            <div class="col-12 display-5 p-4  text-white text-center text-lg-center">{{__('ui.visualizzaCategoria')}} {{$category->name}}</div>
+            <div class="col-12 display-5 p-4  text-white text-center text-lg-center">{{__('ui.visualizzaCategoria')}} {{__('ui.'. $category->name)}}</div>
         </div>
-        <div class="row p-5 m-0 justify-content-center border-bottom border-dark bg-carousel">
+        <div class="row p-4 m-0 justify-content-center border-bottom border-dark bg-carousel">
             @foreach ($divCategories as $category)
             <div class="col-12 col-lg-2 my-3 d-flex flex-column justify-content-center align-items-center">
                 @if($category->name == 'Elettronica')
@@ -72,8 +72,8 @@
                             </div>
                     @empty
                        <div class="col-12 ms-5">
-                            <p class="h1 text display-5 fw-bold">Non è presente alcun articolo per questa categoria!</p>
-                            <p class="mt-5 fs-2 text fw-bold">Pubblicane uno: <a href="{{route('article.form-create')}}" class=" fs-3 ms-4 bg-button px-5">Crea articolo</a></p>
+                            <p class="h1 text display-5 fw-bold">{{__('ui.noArticoli')}}</p>
+                            <p class="mt-5 fs-2 text fw-bold">{{__('ui.pubblica')}} <a href="{{route('article.form-create')}}" class=" fs-3 ms-4 bg-button px-5">{{__('ui.creaArticolo')}}</a></p>
                         </div> 
                     @endforelse
                 </div>

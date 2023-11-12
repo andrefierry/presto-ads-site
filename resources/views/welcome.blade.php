@@ -14,13 +14,13 @@
             </div>
         <div class="w-100 bg-welcome container-fluid">
             <div class="col-6 d-flex flex-column  justify-content-center mt-5 bg-cerca">
-                <h2 class="ms-5 display-6 fw-bold text mt-5">Cerca qui i tuoi articoli</h2>
-                <a href="{{route('article.form-create')}}" class="ms-5 fs-5 mt-2 text-dark fw-bold d-inline-block d-md-none">oppure puoi caricarne uno</a>
+                <h2 class="ms-5 display-6 fw-bold text mt-5">{{__('ui.ricercaArticoli')}}</h2>
+                <a href="{{route('article.form-create')}}" class="ms-5 fs-5 mt-2 text-dark fw-bold d-inline-block d-md-none">{{__('ui.oppureCarica')}}</a>
                 <form action="{{route('articles.search')}}" method="GET" class="d-flex ms-5 me-5 w-75 mt-2" role="search">
                     <input name="searched" class="form-control me-2 fs-6 bg-transparent border border-dark text-dark" type="search" placeholder="{{__('ui.ricerca')}}" aria-label="Search">
                     <button class="btn btn-dark fs-5 px-4 fw-bold" type="submit">Search</button>
                   </form>
-                  <a href="{{route('article.form-create')}}" class="ms-5 fs-5 mt-4 text-dark fw-bold d-none d-md-inline-block">oppure puoi caricarne uno</a>
+                  <a href="{{route('article.form-create')}}" class="ms-5 fs-5 mt-4 text-dark fw-bold d-none d-md-inline-block">{{__('ui.oppureCarica')}}</a>
             </div>
         </div>
             <div class=" d-flex align-items-center container-fluid  bg-carousel border-top border-dark">
@@ -89,7 +89,7 @@
     </div>
 
     <div class="div-vuoto d-flex align-items-center justify-content-center bg-carousel">
-        <a href="{{route('article.all',compact('articles'))}}" class="fs-3 text-decoration-none bg-button text-white px-5 py-3 bg-all-articles">Vedi tutti i nostri articoli</a>
+        <a href="{{route('article.all',compact('articles'))}}" class="fs-3 text-decoration-none bg-button text-white px-5 py-3 bg-all-articles">{{__('ui.vediTutti')}}</a>
     </div>
 
     <div class="container-fluid shadow  border-top border-dark">

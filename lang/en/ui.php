@@ -10,7 +10,7 @@ return [
     'team'=>'Developement team',
     'registratiCliccando'=>'Click here to sign up',
     'lavoraConNoi'=>'Do you want to work with us?',
-    'diventaRevisore'=>'Become rebvisor',
+    'diventaRevisore'=>'Become revisor',
     'visualizzaCategoria'=>'You are viewing the category',
     'categorie'=>'Categories',
     'benvenuto'=>'Welcome',
@@ -40,6 +40,13 @@ return [
     'Finanza' => 'Finance',
     'Elettronica' => 'Electronics',
     'Motori' => 'Motors',
-    'Usato' => 'Used'
-
+    'Usato' => 'Used',
+    'ricercaArticoli' => 'Search here your articles',
+    'oppureCarica' => 'or upload one',
+    'vediTutti' => 'See all our articles',
+    'seiRevisore' => 'You are a revisor',
+    'nonSeiRevisore' => 'You are not a revisor',
+    'articoliCreati' => 'Here are the articles you created',
+    'noArticoli' => 'There are no articles for this category!',
+    'pubblica' => 'Post one:'
 ];
