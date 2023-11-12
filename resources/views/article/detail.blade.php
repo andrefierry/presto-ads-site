@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid mb-5 p-0">
         <div class="col-12 mb-5 p-0 bg-revision">
-            <h2 class="display-6 mb-4 text-white ms-5 p-4">Dettaglio {{$article->title}}</h2>
+            <h2 class="display-6 mb-4 text-white ms-5 p-4">{{__('ui.dettaglio')}} {{$article->title}}</h2>
         </div>
         <div class="row  py-5 mx-5  justify-content-center">
             <div class="col-10 d-flex border border-dark bg-detail py-5 rounded shadow">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
                     <div class="mt-auto d-flex justify-content-center">
-                        <a href="{{route('welcome')}}"><button class="bg-button px-5 ms-5 fs-6">Torna alla home</button></a>
+                        <a href="{{route('welcome')}}"><button class="bg-button px-5 ms-5 fs-6">{{__('ui.tornaHome')}}</button></a>
                     </div>
             </div>
             <div class="col-12 col-md-6 d-flex flex-column mb-5">

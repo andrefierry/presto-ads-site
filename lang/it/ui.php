@@ -52,5 +52,9 @@ return [
     'nonSeiRevisore' => 'Non sei revisore',
     'articoliCreati' => 'Ecco gli articoli che hai creato',
     'noArticoli' => 'Non è presente alcun articolo per questa categoria!',
-    'pubblica' => 'Pubblicane uno:'
+    'pubblica' => 'Pubblicane uno:',
+    'tornaHome' => 'Torna alla home',
+    'risultatiRicerca' => 'Ecco qui i risultati della tua ricerca',
+    'categoria' => 'categoria',
+    'ricercaCorrisponde' => 'La tua ricerca non corrisponde ad alcun articolo!'
 ];

@@ -48,5 +48,9 @@ return [
     'nonSeiRevisore' => 'You are not a revisor',
     'articoliCreati' => 'Here are the articles you created',
     'noArticoli' => 'There are no articles for this category!',
-    'pubblica' => 'Post one:'
+    'pubblica' => 'Post one:',
+    'tornaHome' => 'Back to home',
+    'risultatiRicerca' => 'Here are the results of your search',
+    'categoria' => 'category',
+    'ricercaCorrisponde' => 'Your search did not match any articles!'
 ];
