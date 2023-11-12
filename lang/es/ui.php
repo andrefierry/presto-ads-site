@@ -41,5 +41,13 @@ return [
     'Finanza' => 'Finanzas',
     'Elettronica' => 'Electrónica',
     'Motori' => 'Motores',
-    'Usato'=>'Usado'
+    'Usato'=>'Usado',
+    'ricercaArticoli' => 'Busca tus artículos aquí',
+    'oppureCarica' => 'o subir uno',
+    'vediTutti' => 'ver todos nuestros artículos',
+    'seiRevisore' => 'Eres un revisor',
+    'nonSeiRevisore' => 'No eres un revisor',
+    'articoliCreati' => 'Aquí están los artículos que creaste',
+    'noArticoli' => '¡No hay artículos para esta categoría!',
+    'pubblica' => 'Publicar uno:'
 ];

@@ -23,14 +23,14 @@
         @if(Auth::user()->is_revisor)
             <div class="col-6 mt-5">
                 <div class="d-flex display-6 me-5 justify-content-end align-items-center">
-                    <p class="me-5">Sei un revisore</p>
+                    <p class="me-5">{{__('ui.seiRevisore')}}</p>
                     <i class="bi bi-eye-fill"></i>
                 </div>
         </div>
         @else
         <div class="col-6 mt-5">
             <div class="d-flex display-6 me-5 justify-content-end">
-                <p class="me-5">Non sei un revisore</p>
+                <p class="me-5">{{__('ui.nonSeiRevisore')}}</p>
                 <i class="bi bi-eye-slash-fill"></i>
             </div>
         </div>
@@ -38,7 +38,7 @@
     </div>
     <div class="container-fluid mt-5">
         <div class="row">
-             <h2 class=" py-5 text-white display-6 text text-center fw-bold">Ecco gli articoli che hai creato</h2>
+             <h2 class=" py-5 text-white display-6 text text-center fw-bold">{{__('ui.articoliCreati')}}</h2>
             @foreach($articles as $key=>$article)
                 @if($article->user_id == Auth::user()->id)
                 <div class="col-12 col-lg-4 p-0 d-flex justify-content-center">
