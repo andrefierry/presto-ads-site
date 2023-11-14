@@ -191,8 +191,9 @@ swiper-container {
 }
 
 .img-preview{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+    background-size: cover; 
 }
 
 .bg-all-articles:hover{

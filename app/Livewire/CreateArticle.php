@@ -32,6 +32,7 @@ class CreateArticle extends Component
     public $validated;
     
     
+    
     protected $rules = [
         'title'=>'required|min:5',
         'body'=>'required',
@@ -129,10 +130,12 @@ class CreateArticle extends Component
                 $newImage = $this->article->images()->create(['path'=> $image->store($newFileName,'public')]);
 
                 RemoveFaces::withChain([
+                    new ResizeImage($newImage->path , 400 , 300),
                     new GoogleVisionSafeSearch($newImage->id), 
                     new GoogleVisionLabelImage($newImage->id),
-                    new ResizeImage($newImage->path , 400 , 300),
                 ])->dispatch($newImage->id); 
+
+                
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
@@ -155,5 +158,7 @@ class CreateArticle extends Component
             return view('livewire.create-article', compact('categories'));
             
         }
+
+
         
 }
