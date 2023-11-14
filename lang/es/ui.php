@@ -6,7 +6,7 @@ return [
     'accetta'=>'Acepta',
     'rifiuta'=>'Seniega',
     'pubblicazione'=>'Publicado el',
-    'team'=>'Equipo de desarrollo',
+    'team'=>'Desarrollado por',
     'registratiCliccando'=>'Regìstrese haciendo click aquì',
     'lavoraConNoi'=>'Quiere trabajar con nosotros?',
     'diventaRevisore'=>'Conviértete an auditor',

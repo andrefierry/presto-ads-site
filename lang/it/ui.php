@@ -8,7 +8,7 @@ return [
     'articoloDaRevisionare'=>"Ecco l'articolo da revisionare",
     'accetta'=>'Accetta',
     'pubblicazione'=>'Pubblicato il',
-    'team'=>'Team di sviluppo',
+    'team'=>'Sviluppato da',
     'registratiCliccando'=>'Registarti cliccando qui',
     'lavoraConNoi'=>'Vuoi lavorare con noi?',
     'diventaRevisore'=>'Diventa revisore',
