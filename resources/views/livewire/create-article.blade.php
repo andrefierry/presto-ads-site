@@ -74,7 +74,7 @@
                                     <select wire:model.defer="category" id="category" class="form-control w-50">
                                         {{-- <option value=""> Scegli la tua categoria</option> --}}
                                         @foreach ($categories as $category )
-                                        <option value="{{$category->id}}">{{$category->name}}</option>
+                                        <option value="{{$category->id}}">{{__( 'ui.'. $category->name )}}</option>
                                         @endforeach
                                     </select>
                                     

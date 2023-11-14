@@ -50,7 +50,7 @@ class PublicController extends Controller
     }
 
     public function profilePage(){
-        $articles = Article::all();
+        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'DESC')->paginate(12); 
         return view('profile.page',compact('articles'));
     }
 

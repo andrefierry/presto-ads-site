@@ -30,6 +30,7 @@ return [
     'zonaRevisore'=>'Revisor zone',
     'NoRevisioni'=>'There are not articles to review',
     'descrizione'=>'Description',
+    'commento' => 'Comment', 
 
     'Viaggi'=>'Travel',
     'Sport' => 'Sport' ,
@@ -52,5 +53,11 @@ return [
     'tornaHome' => 'Back to home',
     'risultatiRicerca' => 'Here are the results of your search',
     'categoria' => 'category',
-    'ricercaCorrisponde' => 'Your search did not match any articles!'
+    'ricercaCorrisponde' => 'Your search did not match any articles!',
+
+    'inserisciNome' => 'Insert your name', 
+    'inserisciEmail' => 'Insert your email', 
+    'percheRevisore' => 'Why do you want to become a revisor?', 
+    'diventaRevisore' => 'Become a revisor', 
+    'inserisciMotivazione' => 'Enter your motivation'
 ];

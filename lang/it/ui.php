@@ -56,5 +56,7 @@ return [
     'tornaHome' => 'Torna alla home',
     'risultatiRicerca' => 'Ecco qui i risultati della tua ricerca',
     'categoria' => 'categoria',
-    'ricercaCorrisponde' => 'La tua ricerca non corrisponde ad alcun articolo!'
+    'ricercaCorrisponde' => 'La tua ricerca non corrisponde ad alcun articolo!',
+
+    'diventaRevisore' => 'Diventa Revisore'
 ];

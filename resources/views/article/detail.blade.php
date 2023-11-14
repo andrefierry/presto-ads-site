@@ -21,12 +21,12 @@
                 <div class="d-flex justify-content-end flex-column container">
                     <div class="row">
                         <div class="col-12 d-flex justify-content-center">
-                            <img class="rounded shadow mt-5 ms-5 grandezza-img me-5" src="{{!$article->images()->get()->isEmpty() ? $article->images()->first()->getUrl(400,300) : 'https://picsum.photos/20'.$key}}" alt="" width="88%" height="360px">
+                            <img class="rounded shadow mt-5 ms-5 grandezza-img me-5" src="{{!$article->images()->get()->isEmpty() ? $article->images()->first()->getUrl(400,300) : 'https://picsum.photos/20'}}" alt="" width="88%" height="360px">
                         </div>
                         <div class="col-12 d-lg-flex d-none justify-content-evenly">
-                            @foreach ($article->images() as $image)
-                            <img class="rounded shadow mt-5 miniature" src="{{$image->getUrl(400,300)}}" alt="" width="170px">
-                            @endforeach
+                            <img class="rounded shadow mt-5 miniature" src="https://picsum.photos/300" alt="" width="170px">
+                            <img class="rounded shadow mt-5 miniature" src="https://picsum.photos/301" alt="" width="170px">
+                            <img class="rounded shadow mt-5 miniature" src="https://picsum.photos/302" alt="" width="170px">
                         </div>
                     </div>
                 </div>

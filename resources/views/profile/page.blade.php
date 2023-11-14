@@ -64,5 +64,12 @@
             @endforeach
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-evenly">
+                {{$articles->links()}}
+            </div>
+        </div>
+    </div>
     <div class="div-vuoto"></div>
 </x-layout>

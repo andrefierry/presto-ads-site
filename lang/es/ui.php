@@ -31,6 +31,7 @@ return [
     'annulla'=>'Undo',
     'zonaRevisore'=>'Àrea revisor',
     'descrizione'=>'Descripcion',
+    'commento' => 'Comentario', 
 
     'Viaggi'=>'Viaje',
     'Sport' => 'Deportes' ,
@@ -53,5 +54,10 @@ return [
     'tornaHome' => 'De vuelta a casa',
     'risultatiRicerca' => 'Aquí están los resultados de tu búsqueda',
     'categoria' => 'categorìa',
-    'ricercaCorrisponde' => '¡Tu búsqueda no coincide con ningún artículo!'
+    'ricercaCorrisponde' => '¡Tu búsqueda no coincide con ningún artículo!', 
+
+    'inserisciNome' => 'Inserta tu nombre', 
+    'inserisciEmail' => 'Introduce tu correo electronico', 
+    'percheRevisore' => '¿Porque quieres ser auditor?', 
+    'diventaRevisore' => 'Convertirse en auditor'
 ];
