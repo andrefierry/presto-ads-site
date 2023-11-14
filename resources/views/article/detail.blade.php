@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid mb-5 p-0">
         <div class="col-12 mb-5 p-0 bg-revision">
-            <h2 class="display-6 mb-4 text-white ms-5 p-4">{{__('ui.dettaglio')}} {{$article->title}}</h2>
+            <h2 class="display-6 mb-4 text-white text-center ms-5 p-4">{{__('ui.dettaglio')}} {{$article->title}}</h2>
         </div>
         <div class="row  py-5 mx-5  justify-content-center">
             <div class="col-10 d-flex border border-dark bg-detail py-5 rounded shadow">
@@ -21,12 +21,12 @@
                 <div class="d-flex justify-content-end flex-column container">
                     <div class="row">
                         <div class="col-12 d-flex justify-content-center">
-                            <img class="rounded shadow mt-5 ms-5 grandezza-img me-5" src="https://picsum.photos/800/600" alt="" width="88%" height="360px">
+                            <img class="rounded shadow mt-5 ms-5 grandezza-img me-5" src="{{!$article->images()->get()->isEmpty() ? $article->images()->first()->getUrl(400,300) : 'https://picsum.photos/20'.$key}}" alt="" width="88%" height="360px">
                         </div>
                         <div class="col-12 d-lg-flex d-none justify-content-evenly">
-                                <img class="rounded shadow mt-5 miniature" src="https://picsum.photos/601" alt="" width="170px">
-                                <img class="rounded shadow mt-5 miniature" src="https://picsum.photos/602" alt="" width="170px">
-                                <img class="rounded shadow mt-5 miniature" src="https://picsum.photos/603" alt="" width="170px">
+                            @foreach ($article->images() as $image)
+                            <img class="rounded shadow mt-5 miniature" src="{{$image->getUrl(400,300)}}" alt="" width="170px">
+                            @endforeach
                         </div>
                     </div>
                 </div>

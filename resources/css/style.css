@@ -353,3 +353,25 @@ swiper-container {
     margin-bottom: 5px; 
   }
   /* Fine Search  */
+
+  /* Pagination */
+.small {
+    display:none; 
+}
+
+.page-link {
+    background-color: var(--primary-color);
+    color: white; 
+    
+}
+
+.page-link.active, .active > .page-link {
+    z-index: 3;
+    color: white;
+    background-color: var(--primary-color);
+    border-color: whitesmoke; 
+}
+
+
+
+  /* Fine pagination */

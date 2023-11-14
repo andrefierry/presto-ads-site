@@ -10,17 +10,17 @@ use Illuminate\Support\Facades\DB;
 class PublicController extends Controller
 {
     public function __construct(){
-        $this->middleware("auth")->except('categoryShow','welcome','setLanguage','allArticles','searchArticles');
+        $this->middleware("auth")->except('articleDetail','categoryShow','welcome','setLanguage','allArticles','searchArticles');
     }
 
     function welcome () {
-        $articles = Article::where('is_accepted', true)->take(6)->get()->sortByDesc('created_at');
+        $articles = Article::where('is_accepted', true)->take(6)->orderBy('created_at', 'DESC')->get();
 
         return view('welcome', compact('articles'));
     }
 
     function allArticles () {
-        $articles = Article::all();
+        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'DESC')->paginate(12);
         return view('article.all', compact('articles'));
     }
 

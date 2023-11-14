@@ -10,7 +10,7 @@
                     </div>
                     <div class="product-info">
                     <div class="product-text">
-                        <h1 class="mb-3 text fw-bold text-card">{{substr($article->title,0,10)}}@if(strlen($article->title) >= 10)... @endif</h1>
+                        <h1 class="mb-3 text fw-bold text-card">{{substr($article->title,0,8)}}@if(strlen($article->title) >= 10)... @endif</h1>
                         <h2>Presto.it</h2>
                         <p class="fs-5 text-card">{{substr($article->body,0,20)}}...</p>
                     </div>
@@ -25,4 +25,23 @@
             @endforeach
         </div>
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-evenly">
+                {{$articles->links()}}
+            </div>
+        </div>
+    </div>
+
+    {{-- <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav> --}}
+
 </x-layout>
