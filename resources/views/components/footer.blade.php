@@ -4,10 +4,10 @@
         <div class="col-6 col-md-4">
           <h5 class="text-center text-white fw-bold mb-4">{{__('ui.team')}}</h5>
           <ul class="nav flex-column align-items-center">
-            <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-white">Domenico Carbone</a></li>
-            <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-white">Federica Procopio</a></li>
-            <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-white">Andrea Menconi</a></li>
-            <li class="nav-item mb-2 "><a href="#" class="nav-link p-0 text-white">William Signorini Boga</a></li>
+            <li class="nav-item mb-2 "><a href="https://www.linkedin.com/in/domenico-carbone-fullstackdeveloper/" class="nav-link p-0 text-white">Domenico Carbone</a></li>
+            <li class="nav-item mb-2 "><a href="https://www.linkedin.com/in/federicaprocopiodev/" class="nav-link p-0 text-white">Federica Procopio</a></li>
+            <li class="nav-item mb-2 "><a href="https://www.linkedin.com/in/andreamenconi/" class="nav-link p-0 text-white">Andrea Menconi</a></li>
+            <li class="nav-item mb-2 "><a href="https://www.linkedin.com/in/william-signorini-boga-web-developer/" class="nav-link p-0 text-white">William Signorini Boga</a></li>
           </ul>
         </div>
   

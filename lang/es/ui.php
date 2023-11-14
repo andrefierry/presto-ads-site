@@ -59,5 +59,7 @@ return [
     'inserisciNome' => 'Inserta tu nombre', 
     'inserisciEmail' => 'Introduce tu correo electronico', 
     'percheRevisore' => '¿Porque quieres ser auditor?', 
-    'diventaRevisore' => 'Convertirse en auditor'
+    'diventaRevisore' => 'Convertirse en auditor',
+    'inserisciMotivazione' => 'Ingresa tu motivacion'
+    
 ];

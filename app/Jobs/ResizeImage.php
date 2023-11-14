@@ -49,6 +49,7 @@ class ResizeImage implements ShouldQueue
             ->watermarkPosition(Manipulations::POSITION_BOTTOM_RIGHT)
             ->watermarkHeight(10, Manipulations::UNIT_PERCENT)
             ->watermarkWidth(10, Manipulations::UNIT_PERCENT)
+            ->watermarkPadding(20, 20, Manipulations::UNIT_PERCENT)
             ->save($destPath); 
         } catch (\Exception $e) {
                         // Handle any potential exceptions or errors here
