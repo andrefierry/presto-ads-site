@@ -9,7 +9,7 @@ return [
     'accetta'=>'Accetta',
     'pubblicazione'=>'Pubblicato il',
     'team'=>'Sviluppato da',
-    'registratiCliccando'=>'Registarti cliccando qui',
+    'registratiCliccando'=>'Registrati cliccando qui',
     'lavoraConNoi'=>'Vuoi lavorare con noi?',
     'diventaRevisore'=>'Diventa revisore',
     'visualizzaCategoria'=>'Stai visualizzando la categoria',
@@ -58,5 +58,10 @@ return [
     'categoria' => 'categoria',
     'ricercaCorrisponde' => 'La tua ricerca non corrisponde ad alcun articolo!',
 
-    'diventaRevisore' => 'Diventa Revisore'
+    'inserisciNome' => 'Inserisci il tuo nome', 
+    'inserisciEmail' => 'Inserisci la tua email', 
+    'percheRevisore' => 'Perchè vuoi diventare revisore?', 
+    'diventaRevisore' => 'Diventa Revisore',
+    'inserisciMotivazione' => 'Inserisci la tua motivazione'
+    
 ];

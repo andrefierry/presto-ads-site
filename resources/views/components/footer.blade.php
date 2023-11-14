@@ -14,8 +14,8 @@
         <div class="col-6 col-md-4">
           <h5 class="text-center text-white fw-bold">Presto.it</h5>
           <ul class="nav justify-content-center align-items-center mt-4 flex-column">
-            <li class="nav-item mb-2  mx-3"><a href="#" class="nav-link p-0 text-white">{{__('ui.registratiCliccando')}}</a></li>
-            <li class="nav-item mb-2  mx-3"><a href="#" class="nav-link p-0 text-white">{{__('ui.lavoraConNoi')}}</a></li>
+            <li class="nav-item mb-2  mx-3"><a  class="nav-link p-0 text-white">{{__('ui.registratiCliccando')}}</a></li>
+            <li class="nav-item mb-2  mx-3"><a  class="nav-link p-0 text-white">{{__('ui.lavoraConNoi')}}</a></li>
             <li class="nav-item mb-2  mx-3"><a href="{{route('revisor-form')}}" class="btn btn-light text-black fw-bold px-4  shadow my-2">{{__('ui.diventaRevisore')}}</a></li>
           </ul>
         </div>
