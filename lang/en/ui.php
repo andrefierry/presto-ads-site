@@ -59,5 +59,7 @@ return [
     'inserisciEmail' => 'Insert your email', 
     'percheRevisore' => 'Why do you want to become a revisor?', 
     'diventaRevisore' => 'Become a revisor', 
-    'inserisciMotivazione' => 'Enter your motivation'
+    'inserisciMotivazione' => 'Enter your motivation', 
+
+    'tuttiArticoli' => 'Here are all our articles'
 ];

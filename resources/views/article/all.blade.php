@@ -1,5 +1,5 @@
 <x-layout>
-    <h1 class="text-center text-white mb-5 p-4 display-5 bg-revision">Ecco tutti i nostri articoli</h1>
+    <h1 class="text-center text-white mb-5 p-4 display-5 bg-revision">{{__('ui.tuttiArticoli')}}</h1>
     <div class="container-fluid">
         <div class="row">
             @foreach($articles as $key=>$article)

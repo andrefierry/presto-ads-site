@@ -60,6 +60,8 @@ return [
     'inserisciEmail' => 'Introduce tu correo electronico', 
     'percheRevisore' => '¿Porque quieres ser auditor?', 
     'diventaRevisore' => 'Convertirse en auditor',
-    'inserisciMotivazione' => 'Ingresa tu motivacion'
+    'inserisciMotivazione' => 'Ingresa tu motivacion',
+
+    'tuttiArticoli' => 'Aqui estan todos nuestros articulos'
     
 ];
